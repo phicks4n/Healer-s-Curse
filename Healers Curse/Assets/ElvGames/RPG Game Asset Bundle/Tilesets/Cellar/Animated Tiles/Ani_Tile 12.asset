@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Ani_Tile 12
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -1769009836, guid: 3b8bb55ac75e10240a108b968d801186, type: 3}
+  - {fileID: 859295448, guid: 3b8bb55ac75e10240a108b968d801186, type: 3}
+  - {fileID: 1716329942, guid: 3b8bb55ac75e10240a108b968d801186, type: 3}
+  - {fileID: 2070123088, guid: 3b8bb55ac75e10240a108b968d801186, type: 3}
+  - {fileID: 2070123088, guid: 3b8bb55ac75e10240a108b968d801186, type: 3}
+  - {fileID: 1716329942, guid: 3b8bb55ac75e10240a108b968d801186, type: 3}
+  - {fileID: 859295448, guid: 3b8bb55ac75e10240a108b968d801186, type: 3}
+  - {fileID: -1769009836, guid: 3b8bb55ac75e10240a108b968d801186, type: 3}
+  m_MinSpeed: 4
+  m_MaxSpeed: 4
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
