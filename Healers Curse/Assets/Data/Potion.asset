@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650fe1e7554084c4d84d5cd03872208f, type: 3}
+  m_Name: Potion
+  m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 5
+  <Name>k__BackingField: Potion
+  <Description>k__BackingField: A rare potion that restores 5 hp.
+  <ItemImage>k__BackingField: {fileID: -1448895615, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
