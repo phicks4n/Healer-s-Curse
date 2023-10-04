@@ -9,11 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 650fe1e7554084c4d84d5cd03872208f, type: 3}
+  m_Script: {fileID: 11500000, guid: bed8296675f5a2a42a6897986d19388f, type: 3}
   m_Name: Potion
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 5
   <Name>k__BackingField: Potion
-  <Description>k__BackingField: A rare potion that restores 5 hp.
+  <Description>k__BackingField: Restores 5 health
   <ItemImage>k__BackingField: {fileID: -1448895615, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
+  <DefaultParametersList>k__BackingField: []
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: 6a83d57947931224bae7b3048f016c86, type: 2}
+    value: 5
