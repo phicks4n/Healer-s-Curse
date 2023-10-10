@@ -3,7 +3,7 @@ guid: 50572bb24b33abe458b4a3818ece3b6a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -86,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -98,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -110,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1554,77 +1561,76 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Character01_32: -35962672
-      Character01_38: 854242585
-      Character01_55: -520939153
+      Character01_0: 1092726896
+      Character01_1: 1954266725
+      Character01_10: 1440883497
+      Character01_11: -2070057554
+      Character01_12: 323444511
+      Character01_13: 888646023
+      Character01_14: 1579856907
+      Character01_15: 1881550017
+      Character01_16: 944486824
+      Character01_17: -2003448024
+      Character01_18: 721870725
       Character01_19: 1561901938
-      Character01_46: 2035729394
-      Character01_37: 206183391
-      Character01_66: -2123919109
       Character01_2: -164059806
-      Character01_56: -2052890190
-      Character01_36: -41369495
-      Character01_52: 855242196
-      Character01_67: 1314177314
-      Character01_9: 1345305234
-      Character01_45: -632974482
+      Character01_20: 1212750477
+      Character01_21: 677007770
+      Character01_22: -793606173
+      Character01_23: 133174357
+      Character01_24: 1224379494
+      Character01_25: 1735503538
+      Character01_26: -1456130315
+      Character01_27: 1129911562
+      Character01_28: -1834256584
+      Character01_29: 2074474536
+      Character01_3: 1771268069
+      Character01_30: 1563030240
+      Character01_31: -801505769
+      Character01_32: -35962672
+      Character01_33: -360360182
       Character01_34: 1985737825
       Character01_35: -1526674652
-      Character01_3: 1771268069
-      Character01_13: 888646023
-      Character01_33: -360360182
-      Character01_48: 1730234105
-      Character01_61: -877623530
-      Character01_26: -1456130315
-      Character01_63: -1277833186
-      Character01_42: 639370455
-      Character01_27: 1129911562
-      Character01_58: 443606603
-      Character01_0: 1092726896
-      Character01_30: 1563030240
-      Character01_49: -600529503
-      Character01_21: 677007770
-      Character01_20: 1212750477
-      Character01_59: 893598009
-      Character01_65: 1849569875
-      Character01_64: -1532283124
-      Character01_41: -1637432742
-      Character01_23: 133174357
-      Character01_1: 1954266725
-      Character01_6: 1330153147
-      Character01_15: 1881550017
-      Character01_47: 1672080815
-      Character01_53: 1384747178
-      Character01_51: 99988455
-      Character01_60: 35319440
-      Character01_5: -1082970304
-      Character01_16: 944486824
-      Character01_24: 1224379494
-      Character01_18: 721870725
-      Character01_14: 1579856907
-      Character01_10: 1440883497
-      Character01_54: -2058085423
-      Character01_4: 1439970417
-      Character01_11: -2070057554
-      Character01_7: -732200216
-      Character01_25: 1735503538
-      Character01_50: 471108087
-      Character01_28: -1834256584
-      Character01_12: 323444511
-      Character01_22: -793606173
-      Character01_8: -328865023
-      Character01_57: 1419928665
-      Character01_31: -801505769
-      Character01_62: 459455995
-      Character01_40: 1634042866
-      Character01_44: 1688494154
-      Character01_29: 2074474536
+      Character01_36: -41369495
+      Character01_37: 206183391
+      Character01_38: 854242585
       Character01_39: 381542469
-      Character01_17: -2003448024
+      Character01_4: 1439970417
+      Character01_40: 1634042866
+      Character01_41: -1637432742
+      Character01_42: 639370455
       Character01_43: 50659137
-  spritePackingTag: 
+      Character01_44: 1688494154
+      Character01_45: -632974482
+      Character01_46: 2035729394
+      Character01_47: 1672080815
+      Character01_48: 1730234105
+      Character01_49: -600529503
+      Character01_5: -1082970304
+      Character01_50: 471108087
+      Character01_51: 99988455
+      Character01_52: 855242196
+      Character01_53: 1384747178
+      Character01_54: -2058085423
+      Character01_55: -520939153
+      Character01_56: -2052890190
+      Character01_57: 1419928665
+      Character01_58: 443606603
+      Character01_59: 893598009
+      Character01_6: 1330153147
+      Character01_60: 35319440
+      Character01_61: -877623530
+      Character01_62: 459455995
+      Character01_63: -1277833186
+      Character01_64: -1532283124
+      Character01_65: 1849569875
+      Character01_66: -2123919109
+      Character01_67: 1314177314
+      Character01_7: -732200216
+      Character01_8: -328865023
+      Character01_9: 1345305234
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

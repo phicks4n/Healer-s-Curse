@@ -3,7 +3,7 @@ guid: 2573a2dd7489a7848bbdf5c51979a608
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -86,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -98,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -110,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1617,80 +1624,79 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Character20_54: 1439036740
-      Character20_22: 1664659140
-      Character20_21: -955084941
-      Character20_27: 625175107
-      Character20_65: 193233425
-      Character20_10: 1721928069
-      Character20_69: 1732717518
-      Character20_13: -371635375
-      Character20_8: 725077996
-      Character20_70: 2109121698
-      Character20_24: 535375551
-      Character20_55: -569380255
-      Character20_6: 1665095215
-      Character20_62: -458570434
-      Character20_26: 1735454812
-      Character20_64: 476931079
-      Character20_4: 794661501
-      Character20_52: -2025369459
-      Character20_7: 2057166973
-      Character20_9: -378422421
-      Character20_37: 2064871782
-      Character20_43: -261484761
-      Character20_60: -1948655122
-      Character20_47: -1954519363
-      Character20_45: -927397919
-      Character20_48: 738581247
-      Character20_41: 1342663638
       Character20_0: -815576956
-      Character20_50: -1962234648
-      Character20_28: -1029249925
+      Character20_1: 1278875666
+      Character20_10: 1721928069
+      Character20_11: 85557779
       Character20_12: -1405530079
-      Character20_46: 144182341
-      Character20_49: -450063283
+      Character20_13: -371635375
       Character20_14: -359482900
       Character20_15: -706319932
+      Character20_16: -1834902007
       Character20_17: 1725361081
       Character20_18: 320090019
       Character20_19: 644685401
-      Character20_53: -1711526376
-      Character20_1: 1278875666
-      Character20_59: -451967107
-      Character20_67: -1436067566
-      Character20_3: 209267811
-      Character20_29: -2095421630
-      Character20_35: -761856157
-      Character20_34: -1129313796
-      Character20_23: -1427623320
-      Character20_38: -120023952
-      Character20_11: 85557779
+      Character20_2: -1557502081
       Character20_20: 1113209184
-      Character20_39: -1367789164
-      Character20_42: -1071555352
-      Character20_57: -545425938
-      Character20_36: -121029695
-      Character20_40: -1968362282
-      Character20_51: -1227203989
+      Character20_21: -955084941
+      Character20_22: 1664659140
+      Character20_23: -1427623320
+      Character20_24: 535375551
+      Character20_25: 2141756187
+      Character20_26: 1735454812
+      Character20_27: 625175107
+      Character20_28: -1029249925
+      Character20_29: -2095421630
+      Character20_3: 209267811
       Character20_30: -1943257925
-      Character20_56: -675387072
-      Character20_68: 256574269
+      Character20_31: -176512039
       Character20_32: 945473375
       Character20_33: 482099157
-      Character20_16: -1834902007
-      Character20_61: 1940201699
-      Character20_2: -1557502081
-      Character20_31: -176512039
-      Character20_63: 432603287
-      Character20_5: -1522731225
+      Character20_34: -1129313796
+      Character20_35: -761856157
+      Character20_36: -121029695
+      Character20_37: 2064871782
+      Character20_38: -120023952
+      Character20_39: -1367789164
+      Character20_4: 794661501
+      Character20_40: -1968362282
+      Character20_41: 1342663638
+      Character20_42: -1071555352
+      Character20_43: -261484761
       Character20_44: -607771484
+      Character20_45: -927397919
+      Character20_46: 144182341
+      Character20_47: -1954519363
+      Character20_48: 738581247
+      Character20_49: -450063283
+      Character20_5: -1522731225
+      Character20_50: -1962234648
+      Character20_51: -1227203989
+      Character20_52: -2025369459
+      Character20_53: -1711526376
+      Character20_54: 1439036740
+      Character20_55: -569380255
+      Character20_56: -675387072
+      Character20_57: -545425938
       Character20_58: 1386107750
-      Character20_25: 2141756187
+      Character20_59: -451967107
+      Character20_6: 1665095215
+      Character20_60: -1948655122
+      Character20_61: 1940201699
+      Character20_62: -458570434
+      Character20_63: 432603287
+      Character20_64: 476931079
+      Character20_65: 193233425
       Character20_66: 572293923
-  spritePackingTag: 
+      Character20_67: -1436067566
+      Character20_68: 256574269
+      Character20_69: 1732717518
+      Character20_7: 2057166973
+      Character20_70: 2109121698
+      Character20_8: 725077996
+      Character20_9: -378422421
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
