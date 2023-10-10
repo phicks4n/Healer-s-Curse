@@ -3,7 +3,7 @@ guid: 33b38856711313d4bb585b1df38feabe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -86,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -98,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -110,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1554,77 +1561,76 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Character21_13: 585795225
-      Character21_17: 1335042818
-      Character21_11: -1091168023
-      Character21_15: -525164175
-      Character21_36: 8161366
-      Character21_23: -1596007057
-      Character21_22: 1175376310
-      Character21_43: 1221716363
-      Character21_29: -2073420848
-      Character21_2: -1631701226
-      Character21_9: 307888078
-      Character21_39: 1839219945
-      Character21_51: 1937502445
-      Character21_55: -45046105
-      Character21_4: -1901455353
-      Character21_14: -2112183099
-      Character21_49: -1396855527
-      Character21_20: -439450680
-      Character21_37: -1259831539
-      Character21_16: -1357298978
-      Character21_32: 1226673425
-      Character21_42: 323318350
-      Character21_33: 87721817
-      Character21_24: -1685942267
-      Character21_31: 187761769
-      Character21_48: 1838350006
-      Character21_6: -1721335358
-      Character21_65: -762864626
-      Character21_47: -1941752814
-      Character21_67: 489396309
-      Character21_58: -1593909439
-      Character21_62: -1167024430
-      Character21_40: 484779906
-      Character21_44: 1986762184
-      Character21_63: 1145061005
       Character21_0: -1437448709
       Character21_1: 1752331715
-      Character21_34: 1664474949
-      Character21_5: -889438701
-      Character21_21: 1306471116
-      Character21_12: 48518214
-      Character21_46: 233148214
-      Character21_64: -648312357
-      Character21_56: -1479572070
-      Character21_8: -289451625
-      Character21_41: 1286233424
-      Character21_26: 1965909336
-      Character21_35: 1785194888
-      Character21_53: -889815809
-      Character21_19: -1205411628
-      Character21_28: 684985857
-      Character21_18: 1072592477
-      Character21_45: -1169160078
-      Character21_30: -2080894160
-      Character21_38: -1680399517
-      Character21_57: 1969783397
-      Character21_7: 1770528971
-      Character21_25: 1615774345
-      Character21_59: 82856914
-      Character21_61: 716539459
-      Character21_50: -1049737701
       Character21_10: -1160477121
-      Character21_60: -1651983465
-      Character21_52: -992371454
-      Character21_66: 703477993
-      Character21_54: -1127392174
-      Character21_3: -1679857301
+      Character21_11: -1091168023
+      Character21_12: 48518214
+      Character21_13: 585795225
+      Character21_14: -2112183099
+      Character21_15: -525164175
+      Character21_16: -1357298978
+      Character21_17: 1335042818
+      Character21_18: 1072592477
+      Character21_19: -1205411628
+      Character21_2: -1631701226
+      Character21_20: -439450680
+      Character21_21: 1306471116
+      Character21_22: 1175376310
+      Character21_23: -1596007057
+      Character21_24: -1685942267
+      Character21_25: 1615774345
+      Character21_26: 1965909336
       Character21_27: 691976393
-  spritePackingTag: 
+      Character21_28: 684985857
+      Character21_29: -2073420848
+      Character21_3: -1679857301
+      Character21_30: -2080894160
+      Character21_31: 187761769
+      Character21_32: 1226673425
+      Character21_33: 87721817
+      Character21_34: 1664474949
+      Character21_35: 1785194888
+      Character21_36: 8161366
+      Character21_37: -1259831539
+      Character21_38: -1680399517
+      Character21_39: 1839219945
+      Character21_4: -1901455353
+      Character21_40: 484779906
+      Character21_41: 1286233424
+      Character21_42: 323318350
+      Character21_43: 1221716363
+      Character21_44: 1986762184
+      Character21_45: -1169160078
+      Character21_46: 233148214
+      Character21_47: -1941752814
+      Character21_48: 1838350006
+      Character21_49: -1396855527
+      Character21_5: -889438701
+      Character21_50: -1049737701
+      Character21_51: 1937502445
+      Character21_52: -992371454
+      Character21_53: -889815809
+      Character21_54: -1127392174
+      Character21_55: -45046105
+      Character21_56: -1479572070
+      Character21_57: 1969783397
+      Character21_58: -1593909439
+      Character21_59: 82856914
+      Character21_6: -1721335358
+      Character21_60: -1651983465
+      Character21_61: 716539459
+      Character21_62: -1167024430
+      Character21_63: 1145061005
+      Character21_64: -648312357
+      Character21_65: -762864626
+      Character21_66: 703477993
+      Character21_67: 489396309
+      Character21_7: 1770528971
+      Character21_8: -289451625
+      Character21_9: 307888078
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
