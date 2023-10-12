@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Objects
   - Interactable
+  - 
   - 
   - 
   - 
@@ -41,14 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
   - name: Player
-    uniqueID: 1133141943
-=======
-  - name: Background
-    uniqueID: 3483917959
-    locked: 0
-  - name: Foreground
-    uniqueID: 1911176211
->>>>>>> origin/julian
+    uniqueID: 13233219
     locked: 0
