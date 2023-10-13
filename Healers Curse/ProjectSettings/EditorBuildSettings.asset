@@ -5,7 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Seed Village.unity
+    guid: 47b063b2ccd6b514181dfecbf4a48ab8
+  - enabled: 1
+    path: Assets/Scenes/PC's House.unity
+    guid: b43abfc4725f7f7419820a748a6d25c2
+  - enabled: 1
+    path: Assets/Scenes/Deep Roots.unity
+    guid: a33d9fa0e4cff394f8c891ed484e1715
+  - enabled: 1
+    path: Assets/Scenes/inventory background.unity
+    guid: cbb4f323c15377547a6bc5d97355a3af
+  - enabled: 1
+    path: Assets/Scenes/Training.unity
+    guid: d3fd3a60c4dd345e7ab8c011bb9f84e4
   m_configObjects: {}
