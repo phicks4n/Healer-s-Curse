@@ -429,7 +429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -207.13103, y: -98.518715}
+  m_AnchoredPosition: {x: -267, y: -109}
   m_SizeDelta: {x: 166.2055, y: 81.5561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &674059261
@@ -673,7 +673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 77.49061, y: -97.22177}
+  m_AnchoredPosition: {x: 7, y: -110}
   m_SizeDelta: {x: 125.0434, y: 67.5767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1190343460
@@ -851,7 +851,7 @@ Transform:
   m_GameObject: {fileID: 1357190377}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 415.2859, y: 79.4374, z: 0}
+  m_LocalPosition: {x: 415.2859, y: 82, z: 0}
   m_LocalScale: {x: 15.726318, y: 13.147521, z: 3.1577458}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -936,7 +936,7 @@ Transform:
   m_GameObject: {fileID: 1548698193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137.9447, y: 79.8498, z: 0}
+  m_LocalPosition: {x: 145, y: 85, z: 0}
   m_LocalScale: {x: 18.179287, y: 13.676179, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1020,7 +1020,7 @@ Transform:
   m_GameObject: {fileID: 1558802070}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 282.3102, y: 79.8737, z: 0}
+  m_LocalPosition: {x: 282.3102, y: 84, z: 0}
   m_LocalScale: {x: 12.095709, y: 13.3498, z: 12.855539}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1061,7 +1061,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.9, y: -95.52414}
+  m_AnchoredPosition: {x: -83, y: -108}
   m_SizeDelta: {x: 200, y: 73.4483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710689835
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -2.5123253}
+  m_margin: {x: 0, y: 0, z: -1.0581055, w: -2.5123253}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
