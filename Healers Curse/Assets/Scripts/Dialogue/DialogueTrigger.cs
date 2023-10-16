@@ -22,9 +22,13 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange)
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            }
         }
         else 
         {
@@ -32,20 +36,20 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
-            playerInRange=true;
+            playerInRange = true;
         
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collider)
     {
-        if (collision.gameObject.tag == "Player") 
+        if (collider.gameObject.tag == "Player") 
         {
-            playerInRange=false;
+            playerInRange = false;
         }
         
     }
