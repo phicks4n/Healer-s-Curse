@@ -25,7 +25,6 @@ public class DialogueTrigger : MonoBehaviour
         if (playerInRange)
         {
             visualCue.SetActive(true);
-          
         }
         else 
         {
