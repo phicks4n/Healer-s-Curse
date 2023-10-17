@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        /*if(DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }*/
+
         //Movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
