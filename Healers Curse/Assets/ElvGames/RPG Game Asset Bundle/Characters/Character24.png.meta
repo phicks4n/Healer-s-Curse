@@ -3,7 +3,7 @@ guid: 9fd5f81ee4fb1f544835b4ff63ed675c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -86,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -98,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -110,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1554,77 +1561,76 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Character24_6: -867465939
-      Character24_62: 1680674282
-      Character24_48: -434165142
-      Character24_32: -2039260886
-      Character24_23: 1783115136
-      Character24_49: 2034893335
-      Character24_61: -1318966374
-      Character24_40: -263896087
-      Character24_59: 1921777844
-      Character24_54: -1669897506
-      Character24_51: 1171455598
-      Character24_2: -1977656384
-      Character24_52: -1301958102
-      Character24_67: 1297738727
-      Character24_12: -1470994390
+      Character24_0: 1721737668
       Character24_1: -1604134828
-      Character24_42: 1096156669
-      Character24_55: 1992512419
-      Character24_7: 1916331176
-      Character24_22: -533349288
-      Character24_30: -754394076
-      Character24_9: 1044451072
-      Character24_28: -1185223805
-      Character24_63: -1911996465
-      Character24_43: 547630215
-      Character24_66: -1633186418
-      Character24_24: -323039626
-      Character24_47: 1985608938
-      Character24_14: 540397464
       Character24_10: -1638075295
       Character24_11: -1685381604
-      Character24_31: 1135380373
-      Character24_56: -1435729217
-      Character24_41: -867013552
-      Character24_25: 1575846437
-      Character24_18: 1990049810
-      Character24_33: 161668273
-      Character24_50: 1265295487
-      Character24_27: 994128197
-      Character24_34: 2100125538
-      Character24_3: 1154665792
-      Character24_29: 831931075
-      Character24_65: -1832030153
+      Character24_12: -1470994390
       Character24_13: -1565543371
-      Character24_45: -151776989
-      Character24_0: 1721737668
-      Character24_19: 128841217
-      Character24_35: 39838664
-      Character24_16: -748851389
-      Character24_26: 1480528473
-      Character24_17: 1122723167
-      Character24_21: -1679365766
-      Character24_46: -2095816175
-      Character24_37: -64759127
-      Character24_53: -1838474479
-      Character24_20: 326781237
-      Character24_38: -1343893302
-      Character24_58: -568559427
-      Character24_57: 886691940
+      Character24_14: 540397464
       Character24_15: 161678138
-      Character24_64: -1639069711
-      Character24_5: -1735517170
-      Character24_4: 1188218163
-      Character24_44: -1716620967
-      Character24_39: -922705527
-      Character24_60: -142958068
-      Character24_8: -14826735
+      Character24_16: -748851389
+      Character24_17: 1122723167
+      Character24_18: 1990049810
+      Character24_19: 128841217
+      Character24_2: -1977656384
+      Character24_20: 326781237
+      Character24_21: -1679365766
+      Character24_22: -533349288
+      Character24_23: 1783115136
+      Character24_24: -323039626
+      Character24_25: 1575846437
+      Character24_26: 1480528473
+      Character24_27: 994128197
+      Character24_28: -1185223805
+      Character24_29: 831931075
+      Character24_3: 1154665792
+      Character24_30: -754394076
+      Character24_31: 1135380373
+      Character24_32: -2039260886
+      Character24_33: 161668273
+      Character24_34: 2100125538
+      Character24_35: 39838664
       Character24_36: -345555256
-  spritePackingTag: 
+      Character24_37: -64759127
+      Character24_38: -1343893302
+      Character24_39: -922705527
+      Character24_4: 1188218163
+      Character24_40: -263896087
+      Character24_41: -867013552
+      Character24_42: 1096156669
+      Character24_43: 547630215
+      Character24_44: -1716620967
+      Character24_45: -151776989
+      Character24_46: -2095816175
+      Character24_47: 1985608938
+      Character24_48: -434165142
+      Character24_49: 2034893335
+      Character24_5: -1735517170
+      Character24_50: 1265295487
+      Character24_51: 1171455598
+      Character24_52: -1301958102
+      Character24_53: -1838474479
+      Character24_54: -1669897506
+      Character24_55: 1992512419
+      Character24_56: -1435729217
+      Character24_57: 886691940
+      Character24_58: -568559427
+      Character24_59: 1921777844
+      Character24_6: -867465939
+      Character24_60: -142958068
+      Character24_61: -1318966374
+      Character24_62: 1680674282
+      Character24_63: -1911996465
+      Character24_64: -1639069711
+      Character24_65: -1832030153
+      Character24_66: -1633186418
+      Character24_67: 1297738727
+      Character24_7: 1916331176
+      Character24_8: -14826735
+      Character24_9: 1044451072
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
