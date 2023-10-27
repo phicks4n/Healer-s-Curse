@@ -3,10 +3,10 @@
 ===main===
 Are you ready for your final training?
     +[Yes]
-    -> chosen("Yes")
+        Then let's get started!
+        -> DONE
     +[No]
-    ->chosen("No")
-
-=== chosen(answer) ===
-You chose {answer}...
+        Come back when you're ready...
+        ->DONE
+        
 -> END
