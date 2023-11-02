@@ -7,18 +7,21 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Animator transition;
+    public Animator battleTransition;
     public float transitionTime;
+    public float battleTransitionTime;
     
     private void Awake()
     {
-       if(instance == null)
+        if (instance != null && instance != this)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
+            return;
         }
         else
         {
-            Destroy(gameObject);
+            instance = this;
+            DontDestroyOnLoad(this);
         } 
     }
 
@@ -41,6 +44,27 @@ public class GameManager : MonoBehaviour
 
         //Play animation
         transition.SetTrigger("End");
+    }
+
+    public void battleTransistion(Collider2D player, int sceneBuildIndex)
+    {
+        StartCoroutine(battleLoadLevel(player, sceneBuildIndex));
+    }
+
+    IEnumerator battleLoadLevel(Collider2D player, int sceneBuildIndex)
+    {
+        //Play animation
+        battleTransition.SetTrigger("Start");
+
+        //Wait
+        yield return new WaitForSeconds(battleTransitionTime);
+
+        //Playered entered, so move to other level
+        print("Switching Scene to " + sceneBuildIndex);
+        SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+
+        //Play animation
+        battleTransition.SetTrigger("End");
     }
 
    

@@ -10,8 +10,8 @@ public class BattleStart : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D player)
     {
         print("Trigger Entered:");
-
-        if (player.tag == "Player")
+        
+        if(player.tag == "Player")
         {
             GameManager.instance.NextLevel(player, sceneBuildIndex);
         }
