@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warpTarget: {fileID: 1486057643}
+  targetExit: {fileID: 1002250426}
   camera: {fileID: 1356840575}
   prevCamera: {fileID: 2055908468}
 --- !u!61 &90466890
@@ -203,7 +204,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.42805684, y: 0.49564505}
+  m_Offset: {x: -0.46822548, y: 0.5300758}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -214,7 +215,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1264656, y: 1.7209387}
+  m_Size: {x: 1.7936325, y: 1.6520772}
   m_EdgeRadius: 0
 --- !u!1 &149076013
 GameObject:
@@ -396,6 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warpTarget: {fileID: 149076014}
+  targetExit: {fileID: 1186022427}
   camera: {fileID: 1356840575}
   prevCamera: {fileID: 1846572225}
 --- !u!61 &247415847
@@ -106067,6 +106069,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &770814051
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3822338124932293438, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822338124932293438, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822338124932293438, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822338124932293438, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822338124932293438, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822338124932293438, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822338124932293438, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822338124932293438, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822338124932293438, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822338124932293438, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464022046792052979, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
+      propertyPath: m_Name
+      value: DialogueManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f8ee5c994a929b41852886181a8d1c3, type: 3}
 --- !u!1 &1002250426
 GameObject:
   m_ObjectHideFlags: 0
@@ -106113,6 +106172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warpTarget: {fileID: 2089307645}
+  targetExit: {fileID: 90466887}
   camera: {fileID: 2055908468}
   prevCamera: {fileID: 1356840575}
 --- !u!61 &1002250429
@@ -106147,7 +106207,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.58576155, y: 0.15770435}
+  m_Offset: {x: -0.6545119, y: 0.24707961}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -106158,7 +106218,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8110552, y: 1.7659969}
+  m_Size: {x: 1.6735544, y: 1.5872464}
   m_EdgeRadius: 0
 --- !u!1 &1088766866
 GameObject:
@@ -108836,6 +108896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warpTarget: {fileID: 387653851}
+  targetExit: {fileID: 247415844}
   camera: {fileID: 1846572225}
   prevCamera: {fileID: 1356840575}
 --- !u!61 &1186022430
@@ -108870,7 +108931,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22529292, y: 0.1126461}
+  m_Offset: {x: 0.22529292, y: 0.1632601}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -108881,7 +108942,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6308208, y: 1.4956436}
+  m_Size: {x: 1.6308208, y: 1.3944156}
   m_EdgeRadius: 0
 --- !u!1 &1232879841
 GameObject:
@@ -112972,3 +113033,4 @@ SceneRoots:
   - {fileID: 313853902}
   - {fileID: 227233892}
   - {fileID: 1814318100}
+  - {fileID: 770814051}
