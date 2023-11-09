@@ -30,6 +30,9 @@ namespace Inventory
         [SerializeField]
         private AudioSource audioSource;
 
+        [SerializeField]
+        private EquippedSlot headSlot, armorSlot, glovesSlot, bootsSlot, mainHandSlot, offHandSlot, ringSlot, necklaceSlot;
+
         private void Start()
         {
             PrepareUI();
@@ -144,6 +147,40 @@ namespace Inventory
             IItemAction itemAction = inventoryItem.item as IItemAction;
             if (itemAction != null)
             {
+                if (inventoryItem.item.itemType == "Head")
+                {
+                    headSlot.EquipGear(inventoryItem.item.ItemImage);
+                }
+                else if (inventoryItem.item.itemType == "Armor")
+                {
+                    armorSlot.EquipGear(inventoryItem.item.ItemImage);
+                }
+                else if (inventoryItem.item.itemType == "Gloves")
+                {
+                    glovesSlot.EquipGear(inventoryItem.item.ItemImage);
+                }
+                else if (inventoryItem.item.itemType == "Boots")
+                {
+                    bootsSlot.EquipGear(inventoryItem.item.ItemImage);
+                }
+                else if (inventoryItem.item.itemType == "Main Hand")
+                {
+                    mainHandSlot.EquipGear(inventoryItem.item.ItemImage);
+                }
+                else if (inventoryItem.item.itemType == "Off Hand")
+                {
+                    offHandSlot.EquipGear(inventoryItem.item.ItemImage);
+                }
+                else if (inventoryItem.item.itemType == "Ring")
+                {
+                    ringSlot.EquipGear(inventoryItem.item.ItemImage);
+                }
+                else if (inventoryItem.item.itemType == "Necklace")
+                {
+                    necklaceSlot.EquipGear(inventoryItem.item.ItemImage);
+                }
+
+
                 itemAction.PerformAction(gameObject, inventoryItem.itemState);
                 audioSource.PlayOneShot(itemAction.actionSFX);
                 if (inventoryData.GetItemAt(itemIndex).IsEmpty)
