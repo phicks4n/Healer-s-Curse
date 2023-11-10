@@ -21,13 +21,6 @@ namespace Inventory.Model
                 weaponSystem.SetWeapon(this, itemState == null ? DefaultParametersList : itemState);
                 return true;
             }*/
-/*
-            if (itemType == "Main Hand")
-            {
-                mainHandSlot.EquipGear(ItemImage, "Main Hand");
-                return true;
-            }*/
-
             return false;
         }
     }
