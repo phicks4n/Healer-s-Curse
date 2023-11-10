@@ -27,6 +27,9 @@ namespace Inventory.Model
 
         [field: SerializeField]
         public List<ItemParameter> DefaultParametersList { get; set; }
+        
+        [field: SerializeField]
+        public string itemType { get; set; }
     }
 
     [Serializable]

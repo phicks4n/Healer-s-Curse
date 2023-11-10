@@ -20,4 +20,5 @@ MonoBehaviour:
   <DefaultParametersList>k__BackingField:
   - itemParameter: {fileID: 11400000, guid: d044f42178d6a244ea26a1125043c582, type: 2}
     value: 10
+  <itemType>k__BackingField: Main Hand
   <actionSFX>k__BackingField: {fileID: 0}
