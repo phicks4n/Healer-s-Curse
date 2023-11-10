@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 466170bbc98adb94494179b8513a7866, type: 3}
-  m_Name: Training Sword
+  m_Name: Training Shield
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: Training Sword
-  <Description>k__BackingField: Basic sword given to all rookie swordsmen.
-  <ItemImage>k__BackingField: {fileID: 993436411, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
-  <DefaultParametersList>k__BackingField:
-  - itemParameter: {fileID: 11400000, guid: d044f42178d6a244ea26a1125043c582, type: 2}
-    value: 10
-  <itemType>k__BackingField: Main Hand
+  <Name>k__BackingField: Training Shield
+  <Description>k__BackingField: Basic shield given to all rookie swordsmen.
+  <ItemImage>k__BackingField: {fileID: -1547857715, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
+  <DefaultParametersList>k__BackingField: []
+  <itemType>k__BackingField: Off Hand
   <actionSFX>k__BackingField: {fileID: 0}
