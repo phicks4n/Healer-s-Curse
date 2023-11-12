@@ -26,4 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Elven Village.unity
     guid: 31bcfdae90ca4094a923c1cfd032d319
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 2404ce426dab8e0449b8781c019232d2
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 1b4ff4c50117cdc45bb82bd558d9f201, type: 2}
