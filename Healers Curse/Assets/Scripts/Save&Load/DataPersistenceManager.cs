@@ -49,6 +49,12 @@ public class DataPersistenceManager : MonoBehaviour
     {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
+
+        // Update the sceneIndex in the loaded gameData
+        if (gameData != null)
+        {
+            gameData.sceneIndex = scene.buildIndex;
+        }
     }
 
     public void OnSceneUnloaded(Scene scene)
@@ -116,6 +122,11 @@ public class DataPersistenceManager : MonoBehaviour
             .OfType<IDataPersistence>();
 
         return new List<IDataPersistence>(dataPersistenceObjects);
+    }
+
+    public GameData GetGameData()
+    {
+        return gameData;
     }
 
     public bool HasGameData() 

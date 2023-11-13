@@ -33,7 +33,23 @@ public class MainMenu : MonoBehaviour
         DisableMenuButtons();
         // load the next scene - which will in turn load the game because of 
         // OnSceneLoaded() in the DataPersistenceManager
-        SceneManager.LoadSceneAsync(0);
+        // Load the game data using the existing LoadGame function in DataPersistenceManager
+        DataPersistenceManager.instance.LoadGame();
+
+        // Retrieve gameData
+        GameData savedData = DataPersistenceManager.instance.GetGameData();
+
+        // Check if sceneIndex is valid before loading
+        if (savedData != null && savedData.sceneIndex >= 0 && savedData.sceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            // Load the saved scene
+            SceneManager.LoadSceneAsync(savedData.sceneIndex);
+        }
+        else
+        {
+            // If the saved data is invalid, load the default scene
+            SceneManager.LoadSceneAsync(0);
+        }
     }
 
     private void DisableMenuButtons() 
