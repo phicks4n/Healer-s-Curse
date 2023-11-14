@@ -43,6 +43,8 @@ public class MainMenu : MonoBehaviour
         if (savedData != null && savedData.sceneIndex >= 0 && savedData.sceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             // Load the saved scene
+            savedData.initialSceneIndex = savedData.sceneIndex;
+
             SceneManager.LoadSceneAsync(savedData.sceneIndex);
         }
         else

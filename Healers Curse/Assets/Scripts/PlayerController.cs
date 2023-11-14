@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour, IDataPersistence
 {
@@ -10,7 +11,6 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     public Animator animator;
 
     Vector2 movement;
-    
 
     // Update is called once per frame
     void Update()
@@ -44,14 +44,49 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        if (data.playerPosition == Vector2.zero)
+        GameData savedData = DataPersistenceManager.instance.GetGameData();
+
+        Debug.Log("1Current scene index: " + savedData.sceneIndex + " Initial Scene Index: " + savedData.initialSceneIndex);
+        Debug.Log("2Current scene index: " + data.sceneIndex + " Initial Scene Index: " + data.initialSceneIndex);
+        if (data.playerPosition == Vector2.zero || savedData.sceneIndex != savedData.initialSceneIndex || savedData.sceneIndex == 1)
         {
             //Use SceneDefault
+            SetSceneDefault(data);
         }
         else
         {
             // Use the provided player position
             SetPlayerPosition(data.playerPosition);
+        }
+    }
+
+    private void SetSceneDefault(GameData data)
+    {
+        Vector2 newPosition;
+
+        //Seed Village
+        if(data.sceneIndex == 0)
+        {
+            newPosition = new Vector2(-46.52f, 13.54f);
+            SetPlayerPosition(newPosition);
+        }
+        //PC House
+        else if(data.sceneIndex == 1)
+        {
+            newPosition = new Vector2(7.01f, -4.22f);
+            SetPlayerPosition(newPosition);
+        }
+        //Deep Roots
+        else if(data.sceneIndex == 2)
+        {
+            newPosition = new Vector2(29.46f, 11.51f);
+            SetPlayerPosition(newPosition);
+        }
+        //Elven Village
+        else if(data.sceneIndex == 5)
+        {
+            newPosition = new Vector2(-.52f, -54.27f);
+            SetPlayerPosition(newPosition);
         }
     }
 

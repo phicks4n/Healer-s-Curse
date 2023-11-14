@@ -66,6 +66,5 @@ public class GameManager : MonoBehaviour
         //Play animation
         battleTransition.SetTrigger("End");
     }
-
    
 }
