@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Healers Curse/Assets/Dialogue/No Entry.ink.meta
 guid: a128cf6dba874af47963320307cafb46
+========
+guid: 1ac8f4989f76ce045942317d016a9568
+folderAsset: yes
+>>>>>>>> Allen-Lin:Healers Curse/Assets/Scripts/PickUp System.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
