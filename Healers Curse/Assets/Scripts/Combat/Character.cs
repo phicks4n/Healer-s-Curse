@@ -9,7 +9,11 @@ public class Character : MonoBehaviour
 
     public int maxHP;
     public int currentHP;
+    public int maxEP;
+    public int currentEP;
     public int damage;
+    public int costOfAttack;
+    public int defense;
     public int currentMana;
     public int maxMana;
 
@@ -30,6 +34,13 @@ public class Character : MonoBehaviour
 
         if (currentHP > maxHP)
             currentHP = maxHP;
+    }
+
+    public int Attack(int amount)
+    {
+        currentEP -= amount;
+
+        return currentEP;
     }
 
 }

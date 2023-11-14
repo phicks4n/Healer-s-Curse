@@ -48,13 +48,17 @@ public class DataPersistenceManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
     {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
-        LoadGame();
 
         // Update the sceneIndex in the loaded gameData
         if (gameData != null)
         {
             gameData.sceneIndex = scene.buildIndex;
+            Debug.Log("Current scene index: " + gameData.sceneIndex + " Initial " + gameData.initialSceneIndex);
+
+            SaveSceneIndex();
         }
+
+        LoadGame();
     }
 
     public void OnSceneUnloaded(Scene scene)
@@ -109,6 +113,15 @@ public class DataPersistenceManager : MonoBehaviour
 
         // save that data to a file using the data handler
         dataHandler.Save(gameData);
+    }
+
+    // Save only the sceneIndex without modifying other data
+    public void SaveSceneIndex()
+    {
+        if (this.gameData != null)
+        {
+            dataHandler.SaveSceneIndex(this.gameData.sceneIndex);
+        }
     }
 
     private void OnApplicationQuit() 

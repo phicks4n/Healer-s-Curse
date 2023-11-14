@@ -87,6 +87,24 @@ public class FileDataHandler
         }
     }
 
+    public void SaveSceneIndex(int sceneIndex)
+    {
+        // Load the existing GameData
+        GameData existingData = Load();
+
+        // If the existing data is null, create a new instance
+        if (existingData == null)
+        {
+            existingData = new GameData();
+        }
+
+        // Update the sceneIndex
+        existingData.sceneIndex = sceneIndex;
+
+        // Save only the sceneIndex back to the file
+        Save(existingData);
+    }
+
     // the below is a simple implementation of XOR encryption
     private string EncryptDecrypt(string data) 
     {
