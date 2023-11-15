@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDataPersistence
 {
     public float moveSpeed = 5f;
 
@@ -35,6 +35,32 @@ public class PlayerController : MonoBehaviour
 
         //Movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.playerPosition = this.transform.position;
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (data.playerPosition == Vector2.zero)
+        {
+            //Use SceneDefault
+        }
+        else
+        {
+            // Use the provided player position
+            SetPlayerPosition(data.playerPosition);
+        }
+    }
+
+
+
+    private void SetPlayerPosition(Vector2 newPosition)
+    {
+        // Set the player position to the provided value
+        this.transform.position = newPosition;
     }
 
 }
