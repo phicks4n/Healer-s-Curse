@@ -22,6 +22,8 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD playerHUD;
     public EnemyHUD enemyHUD;
 
+    bool Block = false;
+
     public BattleState state;
 
     void Start()
@@ -62,11 +64,14 @@ public class BattleSystem : MonoBehaviour
 
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
-        int hasEnergy = playerUnit.Attack(playerUnit.costOfAttack);
+        int hasEnergy = playerUnit.currentEP;
 
         
-        if (hasEnergy >= 0)
+        if (hasEnergy >= playerUnit.costOfAttack)
         {
+
+            playerUnit.Energy(playerUnit.costOfAttack);
+
             enemyHUD.SetHP(enemyUnit.currentHP);
             playerHUD.SetEP(playerUnit.currentEP);
 
@@ -92,21 +97,45 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "Your energy is too low!";
             state = BattleState.PLAYERTURN;
             StartCoroutine(PlayerTurn());
-        }
+        }  
+    }
 
+    IEnumerator PlayerRecover()
+    {
+        playerUnit.Recover(10);
 
-        
+        playerHUD.SetEP(playerUnit.currentEP);
+        dialogueText.text = "You recover some energy!";
+
+        state = BattleState.WAIT;
+
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
+
     }
 
     IEnumerator EnemyTurn()
     {
         yield return new WaitForSeconds(1f);
 
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        int damageDone;
+
+        if (!Block)
+        {
+            damageDone = enemyUnit.damage;
+        }
+        else
+            damageDone = enemyUnit.damage - playerUnit.armor;
+
+        bool isDead = playerUnit.TakeDamage(damageDone);
 
         playerHUD.SetHP(playerUnit.currentHP);
 
-        dialogueText.text = enemyUnit.enemyName + " deals " + enemyUnit.damage + " damage!";
+        dialogueText.text = enemyUnit.enemyName + " deals " + damageDone + " damage!";
+
+        Block = false;
 
         yield return new WaitForSeconds(1f);
 
@@ -120,7 +149,6 @@ public class BattleSystem : MonoBehaviour
         {
             state = BattleState.PLAYERTURN;
             StartCoroutine(PlayerTurn());
-
         }
     }
 
@@ -137,7 +165,7 @@ public class BattleSystem : MonoBehaviour
 
     }
 
-    public void onAttackButton()
+    public void OnAttackButton()
     {
         if (state != BattleState.PLAYERTURN)
         {
@@ -145,6 +173,26 @@ public class BattleSystem : MonoBehaviour
         }
         state = BattleState.WAIT;
         StartCoroutine(PlayerAttack());
+    }
+
+    public void OnRecoverButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+
+        state = BattleState.WAIT;
+        StartCoroutine(PlayerRecover());
+    }
+
+    public void OnBlockButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+
+        Block = true;
+        dialogueText.text = "You brace for an attack!";
+        state = BattleState.WAIT;
+        StartCoroutine(EnemyTurn());
     }
 
     /*public GameObject playerPrefab;
