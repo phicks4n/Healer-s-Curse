@@ -967,7 +967,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 138293456}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1471713881}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnBlockButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &549674244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9715,7 +9727,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1210354941}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1471713881}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnRecoverButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1624324118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9839,7 +9863,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1471713881}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: onAttackButton
+        m_MethodName: OnAttackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10305,6 +10329,63 @@ RectTransform:
   m_AnchoredPosition: {x: 85.49701, y: 46.699997}
   m_SizeDelta: {x: 22.123, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &2083229090
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5074398302510234063, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381579705134772806, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -43.64744
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381579705134772806, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.894585
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381579705134772806, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.839122
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381579705134772806, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381579705134772806, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381579705134772806, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381579705134772806, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381579705134772806, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381579705134772806, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381579705134772806, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10316,3 +10397,4 @@ SceneRoots:
   - {fileID: 371490042}
   - {fileID: 1146978318}
   - {fileID: 904678546}
+  - {fileID: 2083229090}

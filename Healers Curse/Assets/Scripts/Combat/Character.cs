@@ -13,7 +13,7 @@ public class Character : MonoBehaviour
     public int currentEP;
     public int damage;
     public int costOfAttack;
-    public int defense;
+    public int armor;
     public int currentMana;
     public int maxMana;
 
@@ -36,11 +36,20 @@ public class Character : MonoBehaviour
             currentHP = maxHP;
     }
 
-    public int Attack(int amount)
+    public void Recover(int amount)
+    {
+        currentEP += amount;
+
+        if(currentEP > maxEP)
+            currentEP = maxEP;
+    }
+
+    public void Energy(int amount)
     {
         currentEP -= amount;
 
-        return currentEP;
+        if (currentEP < 0)
+            currentEP = 0;
     }
 
 }

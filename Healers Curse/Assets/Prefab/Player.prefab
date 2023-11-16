@@ -137,6 +137,6 @@ MonoBehaviour:
   currentEP: 50
   damage: 10
   costOfAttack: 15
-  defense: 0
+  armor: 5
   currentMana: 0
   maxMana: 0
