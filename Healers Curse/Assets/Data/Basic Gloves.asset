@@ -19,4 +19,9 @@ MonoBehaviour:
   <ItemImage>k__BackingField: {fileID: -2059072259, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
   <DefaultParametersList>k__BackingField: []
   <itemType>k__BackingField: Gloves
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: 94c9106bb93ce2743bdf2e74c5914668, type: 2}
+    value: 2
+  - statModifier: {fileID: 11400000, guid: a0cdf76959e157a4f87b74b997431bd8, type: 2}
+    value: 2
   <actionSFX>k__BackingField: {fileID: 0}
