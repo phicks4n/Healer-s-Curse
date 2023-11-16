@@ -25,6 +25,8 @@ public class MainMenu : MonoBehaviour
         DataPersistenceManager.instance.NewGame();
         // load the gameplay scene - which will in turn save the game because of
         // OnSceneUnloaded() in the DataPersistenceManager
+
+        //Load intro cutscene --
         SceneManager.LoadSceneAsync(0);
     }
 
@@ -50,6 +52,8 @@ public class MainMenu : MonoBehaviour
         else
         {
             // If the saved data is invalid, load the default scene
+
+            //Load intro cutscene -- 
             SceneManager.LoadSceneAsync(0);
         }
     }
