@@ -17,9 +17,33 @@ public class Character : MonoBehaviour
     public int currentMana;
     public int maxMana;
 
-    public bool TakeDamage(int dmg)
+    // parameters are enemy dmg, character armor, enemyCurrentHealth, enemyMaxHealth
+    public bool TakeDamage(int dmg, int armor, int currentHealth, int maxHealth, bool Block)
     {
-        currentHP -= dmg;
+        if (Block == false)
+        {
+            currentHP -= dmg;
+        }
+        else
+        {
+            if (maxHealth - currentHealth >= .5 * maxHealth)
+            {
+                currentHP = currentHP - (dmg - (int)(0.35 * armor));
+            }
+            else if ((maxHealth - currentHealth < .5 * maxHealth) && (maxHealth - currentHealth >= .25 * maxHealth))
+            {
+                currentHP = currentHP - (dmg - (int)(0.25 * armor));
+
+            }
+            else if ((maxHealth - currentHealth < .25 * maxHealth) && (maxHealth - currentHealth >= .1 * maxHealth))
+            {
+                currentHP = currentHP - (dmg - (int)(0.15 * armor));
+            }
+            else if ((maxHealth - currentHealth < .1 * maxHealth))
+            {
+                currentHP = currentHP - dmg;
+            }
+        }
 
         if (currentHP <= 0)
             return true;
