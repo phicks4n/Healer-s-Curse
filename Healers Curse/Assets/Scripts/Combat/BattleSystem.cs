@@ -62,7 +62,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerAttack()
     {
 
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage, enemyUnit.armor, playerUnit.currentHP, playerUnit.maxHP);
 
         int hasEnergy = playerUnit.currentEP;
 
@@ -83,13 +83,11 @@ public class BattleSystem : MonoBehaviour
             {
                 state = BattleState.WON;
                 EndBattle();
-
             }
             else
             {
                 state = BattleState.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
-
             }
         }
         else
@@ -129,7 +127,7 @@ public class BattleSystem : MonoBehaviour
         else
             damageDone = enemyUnit.damage - playerUnit.armor;
 
-        bool isDead = playerUnit.TakeDamage(damageDone);
+        bool isDead = playerUnit.TakeDamage(damageDone, playerUnit.armor, enemyUnit.currentHP, enemyUnit.maxHP, Block);
 
         playerHUD.SetHP(playerUnit.currentHP);
 
