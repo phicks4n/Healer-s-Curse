@@ -16,13 +16,13 @@ public class Enemy : MonoBehaviour
     // parameters are character dmg, enemy armor, characterCurrentHealth, characterMaxHealth
     public bool TakeDamage(int dmg, int armor, int currentHealth, int maxHealth)
     {
-        if (maxHealth - currentHealth >= .3 * maxHealth)
+        if ((int) (currentHealth / maxHealth) >= .3 * maxHealth)
         {
-            currentHP = currentHP - (dmg - (int)(.4 * armor));
+            currentHP = currentHP - (dmg - (int)(.8 * armor));
         }
-        else if (maxHealth - currentHealth < .3 * maxHealth)
+        else if ((int) (currentHealth / maxHealth) < .3 * maxHealth)
         {
-            currentHP = currentHP - (dmg - (int)(.1 * armor));
+            currentHP = currentHP - (dmg - (int)(.3 * armor));
         }
 
         if (currentHP <= 0)
