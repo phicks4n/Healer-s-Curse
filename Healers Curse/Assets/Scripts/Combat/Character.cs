@@ -20,7 +20,7 @@ public class Character : MonoBehaviour
     // parameters are enemy dmg, character armor, enemyCurrentHealth, enemyMaxHealth
     public bool TakeDamage(int dmg, int armor, int currentHealth, int maxHealth, bool Block)
     {
-        if (Block == false)
+        if (Block == true)
         {
             currentHP -= dmg;
         }
