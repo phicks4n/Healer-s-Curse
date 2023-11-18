@@ -161,6 +161,16 @@ namespace Inventory.Model
         {
             OnInventoryUpdated?.Invoke(GetCurrentInventoryState());
         }
+
+        public List<InventoryItem> GetInventoryList()
+        {
+            return inventoryItems;
+        }
+
+        public void SetInventoryList(List<InventoryItem> inventoryData)
+        {
+            inventoryItems = inventoryData;
+        }
     }
 
     [Serializable]

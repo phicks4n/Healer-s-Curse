@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     void FixedUpdate()
     {
-        if(DialogueManager.GetInstance().dialogueIsPlaying)
+        if(DialogueManager.GetInstance().dialogueIsPlaying || SceneManager.GetActiveScene().buildIndex == 7)
         {
             return;
         }
@@ -39,7 +39,10 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data) 
     {
-        data.playerPosition = this.transform.position;
+        if(data.sceneIndex != 7)
+        {
+            data.playerPosition = this.transform.position;
+        }
     }
 
     public void LoadData(GameData data)

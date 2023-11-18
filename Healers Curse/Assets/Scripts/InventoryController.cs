@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Inventory
 {
-    public class InventoryController : MonoBehaviour
+    public class InventoryController : MonoBehaviour //, IDataPersistence
     {
         [SerializeField]
         private InventoryPage inventoryUI;
@@ -35,8 +35,24 @@ namespace Inventory
 
         private void Start()
         {
+            //GameData savedData = DataPersistenceManager.instance.GetGameData();
+            
             PrepareUI();
-            PrepareInventoryData();
+            PrepareInventoryData();  
+            Debug.Log("I'm using the NEW data");
+
+            /*if(savedData.inventoryData[0].quantity != 0)
+            {
+                PrepareUI();
+                PrepareOldInventoryData(savedData);
+                Debug.Log("I'm using the old data");
+            }
+            else
+            {
+                PrepareUI();
+                PrepareInventoryData();  
+                Debug.Log("I'm using the NEW data");
+            }*/
         }
 
         private void PrepareInventoryData()
@@ -52,6 +68,20 @@ namespace Inventory
                 inventoryData.AddItem(item);
             }
         }
+
+        /*private void PrepareOldInventoryData(GameData savedData)
+        {
+            inventoryData.Initialize();
+            inventoryData.OnInventoryUpdated += UpdateInventoryUI;
+            foreach (InventoryItem item in savedData.inventoryData)
+            {
+                if (item.IsEmpty)
+                {
+                    continue;
+                }
+                inventoryData.AddItem(item);
+            }
+        }*/
 
         private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
         {
@@ -309,5 +339,17 @@ namespace Inventory
                 }
             }
         }
+
+        /*
+        public void SaveData(GameData data) 
+        {
+            data.inventoryData = inventoryData.GetInventoryList();
+            data.equipmentData = equipmentData.GetInventoryList();
+        }
+
+        public void LoadData(GameData data)
+        {
+
+        }*/
     }
 }

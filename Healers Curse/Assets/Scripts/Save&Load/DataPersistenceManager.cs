@@ -50,7 +50,7 @@ public class DataPersistenceManager : MonoBehaviour
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
 
         // Update the sceneIndex in the loaded gameData
-        if (gameData != null)
+        if (gameData != null && scene.buildIndex != 7)
         {
             gameData.sceneIndex = scene.buildIndex;
             Debug.Log("Current scene index: " + gameData.sceneIndex + " Initial " + gameData.initialSceneIndex);
