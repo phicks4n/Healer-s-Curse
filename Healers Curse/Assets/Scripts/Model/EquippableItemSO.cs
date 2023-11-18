@@ -8,6 +8,8 @@ namespace Inventory.Model
     [CreateAssetMenu]
     public class EquippableItemSO : ItemSO, IDestroyableItem, IItemAction
     {
+        [SerializeField]
+        private List<ModifierData> modifiersData = new List<ModifierData>();
         public string ActionName => "Equip";
         [field: SerializeField]
         public AudioClip actionSFX { get; private set; }
@@ -21,7 +23,11 @@ namespace Inventory.Model
                 weaponSystem.SetWeapon(this, itemState == null ? DefaultParametersList : itemState);
                 return true;
             }*/
-            return false;
+            foreach (ModifierData data in modifiersData)
+            {
+                data.statModifier.AffectCharacter(character, data.value);
+            }
+            return true;
         }
     }
 }

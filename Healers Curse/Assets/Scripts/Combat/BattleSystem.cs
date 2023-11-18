@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -152,15 +153,18 @@ public class BattleSystem : MonoBehaviour
 
     void EndBattle()
     {
+        GameData savedData = DataPersistenceManager.instance.GetGameData();
+
         if (state == BattleState.WON)
         {
             dialogueText.text = "Victory!";
+            SceneManager.LoadSceneAsync(savedData.sceneIndex);
         }
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "You have died...";
+            SceneManager.LoadSceneAsync(savedData.sceneIndex);
         }
-
     }
 
     public void OnAttackButton()

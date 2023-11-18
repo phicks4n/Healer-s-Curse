@@ -21,4 +21,7 @@ MonoBehaviour:
   - itemParameter: {fileID: 11400000, guid: d044f42178d6a244ea26a1125043c582, type: 2}
     value: 10
   <itemType>k__BackingField: Main Hand
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: b69f68f85ee7bf247a678214a7902130, type: 2}
+    value: 10
   <actionSFX>k__BackingField: {fileID: 0}

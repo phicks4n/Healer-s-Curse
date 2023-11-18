@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 466170bbc98adb94494179b8513a7866, type: 3}
-  m_Name: Health Necklace
+  m_Name: Defense Necklace
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: Health Necklace
-  <Description>k__BackingField: Provides 10 health to its owner.
+  <Name>k__BackingField: Defense Necklace
+  <Description>k__BackingField: Provides 5 armor to its owner.
   <ItemImage>k__BackingField: {fileID: 1389403294, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
   <DefaultParametersList>k__BackingField: []
   <itemType>k__BackingField: Necklace
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: 94c9106bb93ce2743bdf2e74c5914668, type: 2}
+    value: 5
   <actionSFX>k__BackingField: {fileID: 0}

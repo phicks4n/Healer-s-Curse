@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IDataPersistence
 {
 
     public float moveSpeed;
@@ -68,9 +68,13 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GameData savedData = DataPersistenceManager.instance.GetGameData();
+
         if(collision.gameObject.tag == "Player")
         {
             target = collision.transform;
+            savedData.playerPosition = collision.gameObject.transform.position;
+            Debug.Log("I am saving position at " + savedData.playerPosition + " Here is my actual position " + collision.gameObject.transform.position);
         }
     }
 
@@ -79,6 +83,23 @@ public class EnemyController : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             target = null;
+        }
+    }
+
+    public void SaveData(GameData data) 
+    {
+        
+    }
+
+    public void LoadData(GameData data)
+    {
+        // Assuming playerPosition and transform.position are Vector2
+        float distance = Vector2.Distance(data.playerPosition, new Vector2(transform.position.x, transform.position.y));
+
+        if (distance <= 4f)
+        {
+            data.playerPosition = gameObject.transform.position;
+            Destroy(gameObject);
         }
     }
 }
