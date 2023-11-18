@@ -26,20 +26,20 @@ public class Character : MonoBehaviour
         }
         else
         {
-            if (maxHealth - currentHealth >= .5 * maxHealth)
+            if ((int) (currentHealth / maxHealth) >= .5 * maxHealth)
             {
                 currentHP = currentHP - (dmg - (int)(0.35 * armor));
             }
-            else if ((maxHealth - currentHealth < .5 * maxHealth) && (maxHealth - currentHealth >= .25 * maxHealth))
+            else if (((int) (currentHealth / maxHealth) < .5 * maxHealth) && ((int) (currentHealth / maxHealth) >= .25 * maxHealth))
             {
                 currentHP = currentHP - (dmg - (int)(0.25 * armor));
 
             }
-            else if ((maxHealth - currentHealth < .25 * maxHealth) && (maxHealth - currentHealth >= .1 * maxHealth))
+            else if (((int) (currentHealth / maxHealth) < .25 * maxHealth) && ((int) (currentHealth / maxHealth) >= .1 * maxHealth))
             {
                 currentHP = currentHP - (dmg - (int)(0.15 * armor));
             }
-            else if ((maxHealth - currentHealth < .1 * maxHealth))
+            else if ((int) (currentHealth / maxHealth) < .1 * maxHealth)
             {
                 currentHP = currentHP - dmg;
             }
