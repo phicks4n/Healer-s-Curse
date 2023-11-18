@@ -19,4 +19,9 @@ MonoBehaviour:
   <ItemImage>k__BackingField: {fileID: -1675797437, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
   <DefaultParametersList>k__BackingField: []
   <itemType>k__BackingField: Armor
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: 94c9106bb93ce2743bdf2e74c5914668, type: 2}
+    value: 20
+  - statModifier: {fileID: 11400000, guid: 524a86e7a6f81df48b12720c9906ffe6, type: 2}
+    value: 10
   <actionSFX>k__BackingField: {fileID: 0}
