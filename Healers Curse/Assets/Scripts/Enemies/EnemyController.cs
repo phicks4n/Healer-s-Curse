@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour, IDataPersistence
 
     private Transform target;
 
+
     // Use this for initialization
     void Start()
     {
@@ -70,11 +71,12 @@ public class EnemyController : MonoBehaviour, IDataPersistence
     {
         GameData savedData = DataPersistenceManager.instance.GetGameData();
 
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             target = collision.transform;
             savedData.playerPosition = collision.gameObject.transform.position;
             Debug.Log("I am saving position at " + savedData.playerPosition + " Here is my actual position " + collision.gameObject.transform.position);
+
         }
     }
 
