@@ -30,7 +30,7 @@ public class Mana : MonoBehaviour
         }
         else
         {
-            currentMana += maxMana;
+            currentMana = maxMana;
             this.mana.SetText(currentMana.ToString() + "/" + maxMana);
         }
     }
