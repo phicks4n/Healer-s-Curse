@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         }
         else if ((int) (currentHealth / maxHealth) < .3 * maxHealth)
         {
-            currentHP = currentHP - (dmg - (int)(.2 * armor));
+            currentHP = currentHP - (dmg - (int)(.15 * armor));
         }
 
         if (currentHP <= 0)
