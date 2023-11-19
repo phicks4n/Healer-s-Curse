@@ -15,7 +15,7 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Defense Necklace
-  <Description>k__BackingField: Provides 5 armor to its owner.
+  <Description>k__BackingField: Made up of gold and sapphire. Grants 5 armor.
   <ItemImage>k__BackingField: {fileID: 1389403294, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
   <DefaultParametersList>k__BackingField: []
   <itemType>k__BackingField: Necklace

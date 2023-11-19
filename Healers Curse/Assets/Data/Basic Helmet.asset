@@ -15,7 +15,8 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Basic Helmet
-  <Description>k__BackingField: Helmet given to all trainees.
+  <Description>k__BackingField: Helmet given to all trainees. Grants 5 armor and
+    3 attack.
   <ItemImage>k__BackingField: {fileID: 1606694053, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
   <DefaultParametersList>k__BackingField: []
   <itemType>k__BackingField: Head

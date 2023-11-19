@@ -15,7 +15,7 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Attack Ring
-  <Description>k__BackingField: Provides 3 attack to its owner.
+  <Description>k__BackingField: A ring made up of silver and ruby. Grants 3 attack.
   <ItemImage>k__BackingField: {fileID: -1443694067, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
   <DefaultParametersList>k__BackingField:
   - itemParameter: {fileID: 11400000, guid: d044f42178d6a244ea26a1125043c582, type: 2}
