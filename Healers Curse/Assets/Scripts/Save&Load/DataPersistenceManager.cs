@@ -127,6 +127,15 @@ public class DataPersistenceManager : MonoBehaviour
         }
     }
 
+    // Save only the enemyType without modifying other data
+    public void SaveEnemyType()
+    {
+        if (this.gameData != null)
+        {
+            dataHandler.SaveEnemyType(this.gameData.enemyType);
+        }
+    }
+
     private void OnApplicationQuit() 
     {
         SaveGame();

@@ -36,7 +36,7 @@ public class Character : MonoBehaviour
             else if ((((currentHealth / maxHealth) * 100) < .5 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .25 * maxHealth))
             {
                 currentHP = currentHP - (dmg - (int)(0.35 * armor));
-                damageTaken = (dmg - (int)(0.45 * armor));
+                damageTaken = (dmg - (int)(0.35 * armor));
 
             }
             else if ((((currentHealth / maxHealth) * 100) < .25 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .1 * maxHealth))
