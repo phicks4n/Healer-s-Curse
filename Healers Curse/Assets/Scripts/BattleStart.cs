@@ -14,7 +14,11 @@ public class BattleStart : MonoBehaviour
         
         if(player.tag == "Player")
         {
+            GameData savedData = DataPersistenceManager.instance.GetGameData();
 
+            savedData.enemyType = enemyType;
+
+            DataPersistenceManager.instance.SaveEnemyType();
             GameManager.instance.NextLevel(player, sceneBuildIndex);
         }
     }

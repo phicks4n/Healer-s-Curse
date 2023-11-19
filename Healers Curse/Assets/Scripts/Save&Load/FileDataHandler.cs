@@ -105,7 +105,7 @@ public class FileDataHandler
         Save(existingData);
     }
 
-    /*public void SaveEnemyType(int enemyTyp)
+    public void SaveEnemyType(int enemyType)
     {
         // Load the existing GameData
         GameData existingData = Load();
@@ -121,7 +121,7 @@ public class FileDataHandler
 
         // Save only the sceneIndex back to the file
         Save(existingData);
-    }*/
+    }
 
     // the below is a simple implementation of XOR encryption
     private string EncryptDecrypt(string data) 

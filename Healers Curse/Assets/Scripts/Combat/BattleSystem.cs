@@ -84,6 +84,11 @@ public class BattleSystem : MonoBehaviour
                 break;
         }
 
+        switch (savedData.enemyType)
+        {
+            
+        }
+
 
         dialogueText.text = "A " + enemyUnit.enemyName + " is attacking!";
 
