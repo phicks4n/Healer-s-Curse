@@ -19,13 +19,13 @@ public class Enemy : MonoBehaviour
     {
         if (((currentHealth / maxHealth) * 100) >= .3 * maxHealth)
         {
-            currentHP = currentHP - (dmg - (float)(.4 * armor));
-            damageTaken = (dmg - (float)(.4 * armor));
+            currentHP = currentHP - (dmg - (int)(.4 * armor));
+            damageTaken = (dmg - (int)(.4 * armor));
         }
         else if (((currentHealth / maxHealth) * 100) < .3 * maxHealth)
         {
-            currentHP = currentHP - (dmg - (float)(.15 * armor));
-            damageTaken = (dmg - (float)(.15 * armor));
+            currentHP = currentHP - (dmg - (int)(.15 * armor));
+            damageTaken = (dmg - (int)(.15 * armor));
         }
 
         if (currentHP <= 0)
