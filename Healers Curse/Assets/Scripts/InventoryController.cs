@@ -353,13 +353,13 @@ namespace Inventory
         {
             data.inventoryData = inventoryData.GetInventoryList();
             data.equipmentData = equipmentData.GetInventoryList();
-            //data.mainHandSlot = mainHandSlot;
+            data.mainHandSlot.item = mainHandSlot.GetEquippedGear();
             //data.mainHandSlot.setSlot(mainHandSlot);
         }
 
         public void LoadData(GameData data)
         {
-            //mainHandSlot.setSlot(data.mainHandSlot);
+            mainHandSlot.EquipGear(data.mainHandSlot.item);
         }
     }
 }

@@ -40,5 +40,10 @@ namespace Inventory.Model
             slotImage.sprite = this.itemSprite;
             slotName.enabled = false;
         }
+
+        public ItemSO GetEquippedGear()
+        {
+            return equipItem;
+        }
     }
 }

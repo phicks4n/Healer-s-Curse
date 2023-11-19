@@ -12,7 +12,7 @@ public class GameData
     public int initialSceneIndex;
     public List<InventoryItem> inventoryData;
     public List<InventoryItem> equipmentData;
-    //public EquippedSlot mainHandSlot;
+    public InventoryItem mainHandSlot;
 
     // the values defined in this constructor will be the default values
     // the game starts with when there's no data to load
@@ -23,6 +23,6 @@ public class GameData
         initialSceneIndex = 0;
         inventoryData = new List<InventoryItem>();
         equipmentData = new List<InventoryItem>();
-        //mainHandSlot = new EquippedSlot();
+        mainHandSlot = new InventoryItem();
     }
 }
