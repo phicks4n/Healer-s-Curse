@@ -15,11 +15,10 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Training Sword
-  <Description>k__BackingField: Basic sword given to all rookie swordsmen.
+  <Description>k__BackingField: Basic sword given to all rookie swordsmen. Grants
+    10 attack.
   <ItemImage>k__BackingField: {fileID: 993436411, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
-  <DefaultParametersList>k__BackingField:
-  - itemParameter: {fileID: 11400000, guid: d044f42178d6a244ea26a1125043c582, type: 2}
-    value: 10
+  <DefaultParametersList>k__BackingField: []
   <itemType>k__BackingField: Main Hand
   modifiersData:
   - statModifier: {fileID: 11400000, guid: b69f68f85ee7bf247a678214a7902130, type: 2}

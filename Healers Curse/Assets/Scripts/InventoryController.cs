@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Inventory
 {
-    public class InventoryController : MonoBehaviour //, IDataPersistence
+    public class InventoryController : MonoBehaviour, IDataPersistence
     {
         [SerializeField]
         private InventoryPage inventoryUI;
@@ -33,26 +33,75 @@ namespace Inventory
         [SerializeField]
         private EquippedSlot headSlot, armorSlot, glovesSlot, bootsSlot, mainHandSlot, offHandSlot, ringSlot, necklaceSlot;
 
-        private void Start()
+        public static InventoryController instance;
+
+        void Awake()
         {
-            //GameData savedData = DataPersistenceManager.instance.GetGameData();
-            
+            if(instance == null)
+            {
+                instance = this;
+                Debug.Log("I am AWAKE");
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
+        /*private void Start()
+        {
             PrepareUI();
             PrepareInventoryData();  
             Debug.Log("I'm using the NEW data");
 
-            /*if(savedData.inventoryData[0].quantity != 0)
+            
+            GameData savedData = DataPersistenceManager.instance.GetGameData();
+
+            if (savedData.playerPosition == Vector2.zero)
             {
-                PrepareUI();
-                PrepareOldInventoryData(savedData);
-                Debug.Log("I'm using the old data");
+                Debug.Log("Im a new Game");
             }
-            else
+            else if (savedData.playerPosition != Vector2.zero)
+            {
+                Debug.Log("Im a old Game");
+            }
+
+            int flag = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                if(savedData.inventoryData[i].quantity != 0)
+                {
+                    PrepareUI();
+                    PrepareOldInventoryData(savedData);
+                    Debug.Log("I'm using the old data");
+                    flag++;
+                    break;
+                }
+            }
+
+            if (flag == 0)
             {
                 PrepareUI();
                 PrepareInventoryData();  
                 Debug.Log("I'm using the NEW data");
-            }*/
+            }
+        }*/
+
+        public void StartOldInventory()
+        {
+            GameData savedData = DataPersistenceManager.instance.GetGameData();
+
+            PrepareUI();
+            PrepareOldInventoryData(savedData);
+            Debug.Log("I'm using the old data");
+        }
+
+        public void StartNewInventory()
+        {
+            PrepareUI();
+            PrepareInventoryData();  
+            Debug.Log("I'm using the NEW data");
         }
 
         private void PrepareInventoryData()
@@ -69,7 +118,7 @@ namespace Inventory
             }
         }
 
-        /*private void PrepareOldInventoryData(GameData savedData)
+        private void PrepareOldInventoryData(GameData savedData)
         {
             inventoryData.Initialize();
             inventoryData.OnInventoryUpdated += UpdateInventoryUI;
@@ -81,7 +130,7 @@ namespace Inventory
                 }
                 inventoryData.AddItem(item);
             }
-        }*/
+        }
 
         private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
         {
@@ -179,35 +228,43 @@ namespace Inventory
             {
                 if (inventoryItem.item.itemType == "Head")
                 {
-                    headSlot.EquipGear(inventoryItem.item.ItemImage);
+                    headSlot.EquipGear(inventoryItem.item);
+                    //headSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Armor")
                 {
-                    armorSlot.EquipGear(inventoryItem.item.ItemImage);
+                    armorSlot.EquipGear(inventoryItem.item);
+                    //armorSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Gloves")
                 {
-                    glovesSlot.EquipGear(inventoryItem.item.ItemImage);
+                    glovesSlot.EquipGear(inventoryItem.item);
+                    //glovesSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Boots")
                 {
-                    bootsSlot.EquipGear(inventoryItem.item.ItemImage);
+                    bootsSlot.EquipGear(inventoryItem.item);
+                    //bootsSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Main Hand")
                 {
-                    mainHandSlot.EquipGear(inventoryItem.item.ItemImage);
+                    mainHandSlot.EquipGear(inventoryItem.item);
+                    //mainHandSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Off Hand")
                 {
-                    offHandSlot.EquipGear(inventoryItem.item.ItemImage);
+                    offHandSlot.EquipGear(inventoryItem.item);
+                    //offHandSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Ring")
                 {
-                    ringSlot.EquipGear(inventoryItem.item.ItemImage);
+                    ringSlot.EquipGear(inventoryItem.item);
+                    //ringSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Necklace")
                 {
-                    necklaceSlot.EquipGear(inventoryItem.item.ItemImage);
+                    necklaceSlot.EquipGear(inventoryItem.item);
+                    //necklaceSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
 
 
@@ -340,16 +397,105 @@ namespace Inventory
             }
         }
 
-        /*
+        
         public void SaveData(GameData data) 
         {
+            //Save the Inventory lists
             data.inventoryData = inventoryData.GetInventoryList();
             data.equipmentData = equipmentData.GetInventoryList();
+
+            //Save the current equipment
+            data.headSlot.item = headSlot.GetEquippedGear();
+            data.armorSlot.item = armorSlot.GetEquippedGear();
+            data.glovesSlot.item = glovesSlot.GetEquippedGear();
+            data.bootsSlot.item = bootsSlot.GetEquippedGear();
+            data.mainHandSlot.item = mainHandSlot.GetEquippedGear();
+            data.offHandSlot.item = offHandSlot.GetEquippedGear();
+            data.ringSlot.item = ringSlot.GetEquippedGear();
+            data.necklaceSlot.item = necklaceSlot.GetEquippedGear();
         }
 
         public void LoadData(GameData data)
         {
+            //Equip the Items and make the necessary stat changes
+            EquipOldItems(data);
+        }
 
-        }*/
+
+        private void EquipOldItems(GameData data)
+        {
+            if (data.headSlot.item != null)
+            {
+                headSlot.EquipGear(data.headSlot.item);
+                IItemAction itemAction = data.headSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.headSlot.itemState);
+                }
+            }
+            if (data.armorSlot.item != null)
+            {
+                armorSlot.EquipGear(data.armorSlot.item);
+                IItemAction itemAction = data.armorSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.armorSlot.itemState);
+                }
+            }
+            if (data.glovesSlot.item != null)
+            {
+                glovesSlot.EquipGear(data.glovesSlot.item);
+                IItemAction itemAction = data.glovesSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.glovesSlot.itemState);
+                }
+            }
+            if (data.bootsSlot.item != null)
+            {
+                bootsSlot.EquipGear(data.bootsSlot.item);
+                IItemAction itemAction = data.bootsSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.bootsSlot.itemState);
+                }
+            }
+            if (data.mainHandSlot.item != null)
+            {
+                mainHandSlot.EquipGear(data.mainHandSlot.item);
+                IItemAction itemAction = data.mainHandSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.mainHandSlot.itemState);
+                }
+            }
+            if (data.offHandSlot.item != null)
+            {
+                offHandSlot.EquipGear(data.offHandSlot.item);
+                IItemAction itemAction = data.offHandSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.offHandSlot.itemState);
+                }
+            }
+            if (data.ringSlot.item != null)
+            {
+                ringSlot.EquipGear(data.ringSlot.item);
+                IItemAction itemAction = data.ringSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.ringSlot.itemState);
+                }
+            }
+            if (data.necklaceSlot.item != null)
+            {
+                necklaceSlot.EquipGear(data.necklaceSlot.item);
+                IItemAction itemAction = data.necklaceSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.necklaceSlot.itemState);
+                }
+            }
+        }
     }
 }

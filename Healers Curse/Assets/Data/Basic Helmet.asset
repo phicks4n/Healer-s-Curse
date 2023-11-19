@@ -15,13 +15,11 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Basic Helmet
-  <Description>k__BackingField: Helmet given to all trainees.
+  <Description>k__BackingField: Helmet given to all trainees. Grants 3% crit chance.
   <ItemImage>k__BackingField: {fileID: 1606694053, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
   <DefaultParametersList>k__BackingField: []
   <itemType>k__BackingField: Head
   modifiersData:
-  - statModifier: {fileID: 11400000, guid: 94c9106bb93ce2743bdf2e74c5914668, type: 2}
-    value: 5
-  - statModifier: {fileID: 11400000, guid: b69f68f85ee7bf247a678214a7902130, type: 2}
+  - statModifier: {fileID: 11400000, guid: 87320b36cf8ad2049917d7e7d099b0c7, type: 2}
     value: 3
   <actionSFX>k__BackingField: {fileID: 0}

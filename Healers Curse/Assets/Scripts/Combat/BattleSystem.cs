@@ -120,7 +120,7 @@ public class BattleSystem : MonoBehaviour
             enemyHUD.SetHP(enemyUnit.currentHP);
             playerHUD.SetEP(playerUnit.currentEP);
 
-            dialogueText.text = "Attack deals " + playerUnit.damage + " damage!";
+            dialogueText.text = "Attack deals " + enemyUnit.damageTaken + " damage!";
 
             yield return new WaitForSeconds(2f);
 
@@ -148,7 +148,7 @@ public class BattleSystem : MonoBehaviour
         playerUnit.Recover(10);
 
         playerHUD.SetEP(playerUnit.currentEP);
-        dialogueText.text = "You recover some energy!";
+        dialogueText.text = "You recovered some energy!";
 
         state = BattleState.WAIT;
 
@@ -163,7 +163,7 @@ public class BattleSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        int damageDone;
+        float damageDone;
 
         if (!Block)
         {
@@ -176,7 +176,7 @@ public class BattleSystem : MonoBehaviour
 
         playerHUD.SetHP(playerUnit.currentHP);
 
-        dialogueText.text = enemyUnit.enemyName + " deals " + damageDone + " damage!";
+        dialogueText.text = enemyUnit.enemyName + " deals " + playerUnit.damageTaken + " damage!";
 
         Block = false;
 

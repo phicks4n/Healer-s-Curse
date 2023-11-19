@@ -7,41 +7,47 @@ public class Character : MonoBehaviour
     public string unitName;
     public int unitLevel;
 
-    public int maxHP;
-    public int currentHP;
+    public float maxHP;
+    public float currentHP;
     public int maxEP;
     public int currentEP;
-    public int damage;
+    public float damage;
     public int costOfAttack;
     public int armor;
     public int currentMana;
     public int maxMana;
+    public float damageTaken;
 
     // parameters are enemy dmg, character armor, enemyCurrentHealth, enemyMaxHealth
-    public bool TakeDamage(int dmg, int armor, int currentHealth, int maxHealth, bool Block)
+    public bool TakeDamage(float dmg, int armor, float currentHealth, float maxHealth, bool Block)
     {
         if (Block == true)
         {
             currentHP -= dmg;
+            damageTaken = dmg;
         }
         else
         {
-            if ((int) (currentHealth / maxHealth) >= .5 * maxHealth)
+            if (((currentHealth / maxHealth) * 100) >= .5 * maxHealth)
+            {
+                currentHP = currentHP - (dmg - (int)(0.55 * armor));
+                damageTaken = (dmg - (int)(0.55 * armor));
+            }
+            else if ((((currentHealth / maxHealth) * 100) < .5 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .25 * maxHealth))
             {
                 currentHP = currentHP - (dmg - (int)(0.35 * armor));
-            }
-            else if (((int) (currentHealth / maxHealth) < .5 * maxHealth) && ((int) (currentHealth / maxHealth) >= .25 * maxHealth))
-            {
-                currentHP = currentHP - (dmg - (int)(0.25 * armor));
+                damageTaken = (dmg - (int)(0.45 * armor));
 
             }
-            else if (((int) (currentHealth / maxHealth) < .25 * maxHealth) && ((int) (currentHealth / maxHealth) >= .1 * maxHealth))
+            else if ((((currentHealth / maxHealth) * 100) < .25 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .1 * maxHealth))
             {
-                currentHP = currentHP - (dmg - (int)(0.15 * armor));
+                currentHP = currentHP - (dmg - (int)(0.25 * armor));
+                damageTaken = (dmg - (int)(0.25 * armor));
             }
-            else if ((int) (currentHealth / maxHealth) < .1 * maxHealth)
+            else if (((currentHealth / maxHealth) * 100) < .1 * maxHealth)
             {
-                currentHP = currentHP - (dmg * 2);
+                currentHP = (currentHP - (int) (dmg * 1.125));
+                damageTaken = dmg;
             }
         }
 
