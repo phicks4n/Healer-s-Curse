@@ -41,7 +41,7 @@ public class Character : MonoBehaviour
             }
             else if ((int) (currentHealth / maxHealth) < .1 * maxHealth)
             {
-                currentHP = currentHP - (dmg * 1.125);
+                currentHP = currentHP - (dmg * 1.1125);
             }
         }
 
