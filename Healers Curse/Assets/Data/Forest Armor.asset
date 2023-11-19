@@ -15,14 +15,12 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Forest Armor
-  <Description>k__BackingField: Crafted with the blessing of the elves. Grants 20
-    armor and 10 magic resist.
+  <Description>k__BackingField: Crafted with the blessing of the elves. Grants 40
+    armor.
   <ItemImage>k__BackingField: {fileID: 2051265627, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
   <DefaultParametersList>k__BackingField: []
   <itemType>k__BackingField: Armor
   modifiersData:
   - statModifier: {fileID: 11400000, guid: 94c9106bb93ce2743bdf2e74c5914668, type: 2}
-    value: 20
-  - statModifier: {fileID: 11400000, guid: 524a86e7a6f81df48b12720c9906ffe6, type: 2}
-    value: 10
+    value: 40
   <actionSFX>k__BackingField: {fileID: 0}

@@ -36,18 +36,31 @@ namespace Inventory
         private void Start()
         {
             GameData savedData = DataPersistenceManager.instance.GetGameData();
-            
-            PrepareUI();
-            PrepareInventoryData();  
-            Debug.Log("I'm using the NEW data");
 
-            if(savedData.inventoryData[0].quantity != 0)
+            if (savedData.playerPosition == Vector2.zero)
             {
-                PrepareUI();
-                PrepareOldInventoryData(savedData);
-                Debug.Log("I'm using the old data");
+                Debug.Log("Im a new Game");
             }
-            else
+            else if (savedData.playerPosition != Vector2.zero)
+            {
+                Debug.Log("Im a old Game");
+            }
+
+            int flag = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                if(savedData.inventoryData[i].quantity != 0)
+                {
+                    PrepareUI();
+                    PrepareOldInventoryData(savedData);
+                    Debug.Log("I'm using the old data");
+                    flag++;
+                    break;
+                }
+            }
+
+            if (flag == 0)
             {
                 PrepareUI();
                 PrepareInventoryData();  
@@ -353,13 +366,90 @@ namespace Inventory
         {
             data.inventoryData = inventoryData.GetInventoryList();
             data.equipmentData = equipmentData.GetInventoryList();
+            data.headSlot.item = headSlot.GetEquippedGear();
+            data.armorSlot.item = armorSlot.GetEquippedGear();
+            data.glovesSlot.item = glovesSlot.GetEquippedGear();
+            data.bootsSlot.item = bootsSlot.GetEquippedGear();
             data.mainHandSlot.item = mainHandSlot.GetEquippedGear();
-            //data.mainHandSlot.setSlot(mainHandSlot);
+            data.offHandSlot.item = offHandSlot.GetEquippedGear();
+            data.ringSlot.item = ringSlot.GetEquippedGear();
+            data.necklaceSlot.item = necklaceSlot.GetEquippedGear();
         }
 
         public void LoadData(GameData data)
         {
-            mainHandSlot.EquipGear(data.mainHandSlot.item);
+            if (data.headSlot.item != null)
+            {
+                headSlot.EquipGear(data.headSlot.item);
+                IItemAction itemAction = data.headSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.headSlot.itemState);
+                }
+            }
+            if (data.armorSlot.item != null)
+            {
+                armorSlot.EquipGear(data.armorSlot.item);
+                IItemAction itemAction = data.armorSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.armorSlot.itemState);
+                }
+            }
+            if (data.glovesSlot.item != null)
+            {
+                glovesSlot.EquipGear(data.glovesSlot.item);
+                IItemAction itemAction = data.glovesSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.glovesSlot.itemState);
+                }
+            }
+            if (data.bootsSlot.item != null)
+            {
+                bootsSlot.EquipGear(data.bootsSlot.item);
+                IItemAction itemAction = data.bootsSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.bootsSlot.itemState);
+                }
+            }
+            if (data.mainHandSlot.item != null)
+            {
+                mainHandSlot.EquipGear(data.mainHandSlot.item);
+                IItemAction itemAction = data.mainHandSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.mainHandSlot.itemState);
+                }
+            }
+            if (data.offHandSlot.item != null)
+            {
+                offHandSlot.EquipGear(data.offHandSlot.item);
+                IItemAction itemAction = data.offHandSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.offHandSlot.itemState);
+                }
+            }
+            if (data.ringSlot.item != null)
+            {
+                ringSlot.EquipGear(data.ringSlot.item);
+                IItemAction itemAction = data.ringSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.ringSlot.itemState);
+                }
+            }
+            if (data.necklaceSlot.item != null)
+            {
+                necklaceSlot.EquipGear(data.necklaceSlot.item);
+                IItemAction itemAction = data.necklaceSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.PerformAction(gameObject, data.necklaceSlot.itemState);
+                }
+            }
         }
     }
 }
