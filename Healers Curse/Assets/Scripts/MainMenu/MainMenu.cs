@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Inventory;
 
 public class MainMenu : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class MainMenu : MonoBehaviour
         // OnSceneLoaded() in the DataPersistenceManager
         // Load the game data using the existing LoadGame function in DataPersistenceManager
         DataPersistenceManager.instance.LoadGame();
+
+        InventoryController.instance.StartOldInventory();
 
         // Retrieve gameData
         GameData savedData = DataPersistenceManager.instance.GetGameData();

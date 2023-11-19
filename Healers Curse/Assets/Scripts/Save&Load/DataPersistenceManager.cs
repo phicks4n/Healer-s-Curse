@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using Inventory;
 
 public class DataPersistenceManager : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
     {
+
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
 
         // Update the sceneIndex in the loaded gameData
@@ -69,6 +71,7 @@ public class DataPersistenceManager : MonoBehaviour
     public void NewGame() 
     {
         this.gameData = new GameData();
+        InventoryController.instance.StartNewInventory();
     }
 
     public void LoadGame()

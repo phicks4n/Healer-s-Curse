@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Inventory
 {
-    public class InventoryController : MonoBehaviour , IDataPersistence
+    public class InventoryController : MonoBehaviour, IDataPersistence
     {
         [SerializeField]
         private InventoryPage inventoryUI;
@@ -33,8 +33,28 @@ namespace Inventory
         [SerializeField]
         private EquippedSlot headSlot, armorSlot, glovesSlot, bootsSlot, mainHandSlot, offHandSlot, ringSlot, necklaceSlot;
 
-        private void Start()
+        public static InventoryController instance;
+
+        void Awake()
         {
+            if(instance == null)
+            {
+                instance = this;
+                Debug.Log("I am AWAKE");
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
+        /*private void Start()
+        {
+            PrepareUI();
+            PrepareInventoryData();  
+            Debug.Log("I'm using the NEW data");
+
+            
             GameData savedData = DataPersistenceManager.instance.GetGameData();
 
             if (savedData.playerPosition == Vector2.zero)
@@ -66,6 +86,22 @@ namespace Inventory
                 PrepareInventoryData();  
                 Debug.Log("I'm using the NEW data");
             }
+        }*/
+
+        public void StartOldInventory()
+        {
+            GameData savedData = DataPersistenceManager.instance.GetGameData();
+
+            PrepareUI();
+            PrepareOldInventoryData(savedData);
+            Debug.Log("I'm using the old data");
+        }
+
+        public void StartNewInventory()
+        {
+            PrepareUI();
+            PrepareInventoryData();  
+            Debug.Log("I'm using the NEW data");
         }
 
         private void PrepareInventoryData()
@@ -364,8 +400,11 @@ namespace Inventory
         
         public void SaveData(GameData data) 
         {
+            //Save the Inventory lists
             data.inventoryData = inventoryData.GetInventoryList();
             data.equipmentData = equipmentData.GetInventoryList();
+
+            //Save the current equipment
             data.headSlot.item = headSlot.GetEquippedGear();
             data.armorSlot.item = armorSlot.GetEquippedGear();
             data.glovesSlot.item = glovesSlot.GetEquippedGear();
@@ -377,6 +416,13 @@ namespace Inventory
         }
 
         public void LoadData(GameData data)
+        {
+            //Equip the Items and make the necessary stat changes
+            EquipOldItems(data);
+        }
+
+
+        private void EquipOldItems(GameData data)
         {
             if (data.headSlot.item != null)
             {
