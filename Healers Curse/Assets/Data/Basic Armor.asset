@@ -15,9 +15,12 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Basic Armor
-  <Description>k__BackingField: Armor for trainees.
+  <Description>k__BackingField: Armor for trainees. Grants 20 armor and 10 magic
+    resist.
   <ItemImage>k__BackingField: {fileID: -1675797437, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
-  <DefaultParametersList>k__BackingField: []
+  <DefaultParametersList>k__BackingField:
+  - itemParameter: {fileID: 0}
+    value: 0
   <itemType>k__BackingField: Armor
   modifiersData:
   - statModifier: {fileID: 11400000, guid: 94c9106bb93ce2743bdf2e74c5914668, type: 2}
