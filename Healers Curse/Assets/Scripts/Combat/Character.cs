@@ -26,20 +26,20 @@ public class Character : MonoBehaviour
         }
         else
         {
-            if ((int) (currentHealth / maxHealth) >= .5 * maxHealth)
+            if (((currentHealth / maxHealth) * 100) >= .5 * maxHealth)
             {
                 currentHP = currentHP - (dmg - (int)(0.35 * armor));
             }
-            else if (((int) (currentHealth / maxHealth) < .5 * maxHealth) && ((int) (currentHealth / maxHealth) >= .25 * maxHealth))
+            else if ((((currentHealth / maxHealth) * 100) < .5 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .25 * maxHealth))
             {
                 currentHP = currentHP - (dmg - (int)(0.25 * armor));
 
             }
-            else if (((int) (currentHealth / maxHealth) < .25 * maxHealth) && ((int) (currentHealth / maxHealth) >= .1 * maxHealth))
+            else if ((((currentHealth / maxHealth) * 100) < .25 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .1 * maxHealth))
             {
                 currentHP = currentHP - (dmg - (int)(0.15 * armor));
             }
-            else if ((int) (currentHealth / maxHealth) < .1 * maxHealth)
+            else if (((currentHealth / maxHealth) * 100) < .1 * maxHealth)
             {
                 currentHP = currentHP - (int) (dmg * 1.1125);
             }
@@ -75,5 +75,4 @@ public class Character : MonoBehaviour
         if (currentEP < 0)
             currentEP = 0;
     }
-
 }
