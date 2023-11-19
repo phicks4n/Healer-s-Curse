@@ -23,7 +23,7 @@ public class EnemyHUD : MonoBehaviour
 
     }
 
-    public void SetHP(int hp)
+    public void SetHP(float hp)
     {
         hpSlider.value = hp;
         hpCounter.text = hpSlider.value.ToString();
