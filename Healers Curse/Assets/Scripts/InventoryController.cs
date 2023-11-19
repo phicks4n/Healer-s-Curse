@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Inventory
 {
-    public class InventoryController : MonoBehaviour //, IDataPersistence
+    public class InventoryController : MonoBehaviour , IDataPersistence
     {
         [SerializeField]
         private InventoryPage inventoryUI;
@@ -35,13 +35,13 @@ namespace Inventory
 
         private void Start()
         {
-            //GameData savedData = DataPersistenceManager.instance.GetGameData();
+            GameData savedData = DataPersistenceManager.instance.GetGameData();
             
             PrepareUI();
             PrepareInventoryData();  
             Debug.Log("I'm using the NEW data");
 
-            /*if(savedData.inventoryData[0].quantity != 0)
+            if(savedData.inventoryData[0].quantity != 0)
             {
                 PrepareUI();
                 PrepareOldInventoryData(savedData);
@@ -52,7 +52,7 @@ namespace Inventory
                 PrepareUI();
                 PrepareInventoryData();  
                 Debug.Log("I'm using the NEW data");
-            }*/
+            }
         }
 
         private void PrepareInventoryData()
@@ -69,7 +69,7 @@ namespace Inventory
             }
         }
 
-        /*private void PrepareOldInventoryData(GameData savedData)
+        private void PrepareOldInventoryData(GameData savedData)
         {
             inventoryData.Initialize();
             inventoryData.OnInventoryUpdated += UpdateInventoryUI;
@@ -81,7 +81,7 @@ namespace Inventory
                 }
                 inventoryData.AddItem(item);
             }
-        }*/
+        }
 
         private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
         {
@@ -179,35 +179,43 @@ namespace Inventory
             {
                 if (inventoryItem.item.itemType == "Head")
                 {
-                    headSlot.EquipGear(inventoryItem.item.ItemImage);
+                    headSlot.EquipGear(inventoryItem.item);
+                    //headSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Armor")
                 {
-                    armorSlot.EquipGear(inventoryItem.item.ItemImage);
+                    armorSlot.EquipGear(inventoryItem.item);
+                    //armorSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Gloves")
                 {
-                    glovesSlot.EquipGear(inventoryItem.item.ItemImage);
+                    glovesSlot.EquipGear(inventoryItem.item);
+                    //glovesSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Boots")
                 {
-                    bootsSlot.EquipGear(inventoryItem.item.ItemImage);
+                    bootsSlot.EquipGear(inventoryItem.item);
+                    //bootsSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Main Hand")
                 {
-                    mainHandSlot.EquipGear(inventoryItem.item.ItemImage);
+                    mainHandSlot.EquipGear(inventoryItem.item);
+                    //mainHandSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Off Hand")
                 {
-                    offHandSlot.EquipGear(inventoryItem.item.ItemImage);
+                    offHandSlot.EquipGear(inventoryItem.item);
+                    //offHandSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Ring")
                 {
-                    ringSlot.EquipGear(inventoryItem.item.ItemImage);
+                    ringSlot.EquipGear(inventoryItem.item);
+                    //ringSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
                 else if (inventoryItem.item.itemType == "Necklace")
                 {
-                    necklaceSlot.EquipGear(inventoryItem.item.ItemImage);
+                    necklaceSlot.EquipGear(inventoryItem.item);
+                    //necklaceSlot.EquipGear(inventoryItem.item.ItemImage);
                 }
 
 
@@ -340,16 +348,18 @@ namespace Inventory
             }
         }
 
-        /*
+        
         public void SaveData(GameData data) 
         {
             data.inventoryData = inventoryData.GetInventoryList();
             data.equipmentData = equipmentData.GetInventoryList();
+            data.mainHandSlot.item = mainHandSlot.GetEquippedGear();
+            //data.mainHandSlot.setSlot(mainHandSlot);
         }
 
         public void LoadData(GameData data)
         {
-
-        }*/
+            mainHandSlot.EquipGear(data.mainHandSlot.item);
+        }
     }
 }

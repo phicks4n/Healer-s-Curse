@@ -34,5 +34,4 @@ public class Energy : MonoBehaviour
             this.energy.SetText(currentEnergy.ToString() + "/" + maxEnergy);
         }
     }
-
 }

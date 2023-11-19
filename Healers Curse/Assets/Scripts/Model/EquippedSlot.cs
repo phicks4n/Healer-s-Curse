@@ -14,13 +14,36 @@ namespace Inventory.Model
         [SerializeField]
         private TMP_Text slotName;
 
-        private Sprite itemSprite;
-
+        public Sprite itemSprite;
+        [SerializeField]
+        public ItemSO equipItem;
+/*
         public void EquipGear(Sprite image)
         {
             this.itemSprite = image;
             slotImage.sprite = this.itemSprite;
             slotName.enabled = false;
+        }*/
+
+        public void EquipGear(ItemSO item)
+        {
+            equipItem = item;
+            this.itemSprite = item.ItemImage;
+            slotImage.sprite = this.itemSprite;
+            slotName.enabled = false;
+        }
+
+        public void setSlot(EquippedSlot otherSlot)
+        {
+            equipItem = otherSlot.equipItem;
+            itemSprite = otherSlot.itemSprite;
+            slotImage.sprite = this.itemSprite;
+            slotName.enabled = false;
+        }
+
+        public ItemSO GetEquippedGear()
+        {
+            return equipItem;
         }
     }
 }

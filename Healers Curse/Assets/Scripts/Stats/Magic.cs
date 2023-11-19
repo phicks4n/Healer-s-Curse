@@ -6,17 +6,27 @@ using TMPro;
 public class Magic : MonoBehaviour
 {
     [SerializeField] private float currentMagic;
+    [SerializeField] private float prevMagic;
     [SerializeField] private TMP_Text magic;
 
     private void Start()
     {
         currentMagic = currentMagic;
+        prevMagic = prevMagic;
         this.magic.SetText(currentMagic.ToString());
     }
 
     public void AddMagic(int magic)
     {
+        Reduce(prevMagic);
+        prevMagic = magic;
         currentMagic += magic;
+        this.magic.SetText(currentMagic.ToString());
+    }
+
+    public void Reduce(float prevmagic)
+    {
+        currentMagic -= prevMagic;
         this.magic.SetText(currentMagic.ToString());
     }
 }
