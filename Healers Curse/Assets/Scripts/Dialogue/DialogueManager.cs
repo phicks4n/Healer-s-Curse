@@ -68,12 +68,20 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        currentStory.BindExternalFunction("tutorialStart", (int sceneIndex) =>
+        {
+            GameManager.instance.NextLevel(null, sceneIndex);
+        });
+
         ContinueStory();
         
     }
 
     private void ExitDialogueMode() 
     {
+
+        currentStory.UnbindExternalFunction("tutorialStart");
+
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
