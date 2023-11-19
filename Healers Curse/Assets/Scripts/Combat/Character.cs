@@ -7,41 +7,47 @@ public class Character : MonoBehaviour
     public string unitName;
     public int unitLevel;
 
-    public int maxHP;
-    public int currentHP;
+    public float maxHP;
+    public float currentHP;
     public int maxEP;
     public int currentEP;
-    public int damage;
+    public float damage;
     public int costOfAttack;
     public int armor;
     public int currentMana;
     public int maxMana;
+    public float damageTaken;
 
     // parameters are enemy dmg, character armor, enemyCurrentHealth, enemyMaxHealth
-    public bool TakeDamage(int dmg, int armor, int currentHealth, int maxHealth, bool Block)
+    public bool TakeDamage(float dmg, int armor, float currentHealth, float maxHealth, bool Block)
     {
         if (Block == true)
         {
             currentHP -= dmg;
+            damageTaken = dmg;
         }
         else
         {
             if (((currentHealth / maxHealth) * 100) >= .5 * maxHealth)
             {
-                currentHP = currentHP - (dmg - (int)(0.35 * armor));
+                currentHP = currentHP - (dmg - (float)(0.55 * armor));
+                damageTaken = (dmg - (float)(0.55 * armor));
             }
             else if ((((currentHealth / maxHealth) * 100) < .5 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .25 * maxHealth))
             {
-                currentHP = currentHP - (dmg - (int)(0.25 * armor));
+                currentHP = currentHP - (dmg - (float)(0.35 * armor));
+                damageTaken = (dmg - (float)(0.45 * armor));
 
             }
             else if ((((currentHealth / maxHealth) * 100) < .25 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .1 * maxHealth))
             {
-                currentHP = currentHP - (dmg - (int)(0.15 * armor));
+                currentHP = currentHP - (dmg - (float)(0.25 * armor));
+                damageTaken = (dmg - (float)(0.25 * armor));
             }
             else if (((currentHealth / maxHealth) * 100) < .1 * maxHealth)
             {
-                currentHP = currentHP - (int) (dmg * 1.1125);
+                currentHP = (currentHP - (float) (dmg * 1.125));
+                damageTaken = dmg;
             }
         }
 
@@ -75,4 +81,5 @@ public class Character : MonoBehaviour
         if (currentEP < 0)
             currentEP = 0;
     }
+
 }
