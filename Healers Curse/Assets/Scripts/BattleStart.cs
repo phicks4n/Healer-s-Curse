@@ -21,6 +21,7 @@ public class BattleStart : MonoBehaviour
 
             DataPersistenceManager.instance.SaveEnemyType();
             DataPersistenceManager.instance.SavePlayerPosition();
+            Debug.Log("I am using the player's last location " + savedData.playerPosition + " player " + player.gameObject.transform.position);
             GameManager.instance.NextLevel(player, sceneBuildIndex);
         }
     }

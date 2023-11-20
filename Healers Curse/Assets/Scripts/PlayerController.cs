@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data) 
     {
-        if(data.sceneIndex != 7)
+        if(data.sceneIndex != 7 && data.enemyType == 0)
         {
             data.playerPosition = this.transform.position;
         }
@@ -50,9 +50,11 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         GameData savedData = DataPersistenceManager.instance.GetGameData();
 
         //If the player is exiting combat, put him in his last known location
-        if(data.enemyType != 0)
+        if(data.enemyType != 0 && SceneManager.GetActiveScene().buildIndex != 7)
         {
             SetPlayerPosition(data.playerPosition);
+
+            Debug.Log("I am using the player's last location" + data.playerPosition);
 
             //Set enemyType to 0 and Save it
             data.enemyType = 0;
@@ -60,6 +62,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
             return;
         }
 
+        Debug.Log("I am continuing");
 
         if (data.playerPosition == Vector2.zero || savedData.sceneIndex != savedData.initialSceneIndex || savedData.sceneIndex == 1)
         {
