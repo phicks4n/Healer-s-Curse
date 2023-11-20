@@ -67,27 +67,40 @@ public class BattleSystem : MonoBehaviour
         {
             case 0:
                 seedVillage.SetActive(true);
-                enemyGo = Instantiate(enemyPrefab2, enemyBattleStation);
-                enemyUnit = enemyGo.GetComponent<Enemy>();
                 break;
             case 2:
                 deepRoots.SetActive(true);
-                enemyGo = Instantiate(enemyPrefab, enemyBattleStation);
-                enemyUnit = enemyGo.GetComponent<Enemy>();
                 break;
             case 5:
                 elvenVillage.SetActive(true);
                 break;
             default:
-                enemyGo = Instantiate(enemyPrefab, enemyBattleStation);
-                enemyUnit = enemyGo.GetComponent<Enemy>();
                 break;
         }
 
-        switch (savedData.enemyType)
+        if (seedVillage)
         {
-            
+            enemyGo = Instantiate(enemyPrefab2, enemyBattleStation);
+            enemyUnit = enemyGo.GetComponent<Enemy>();
         }
+        else
+        {
+            switch (savedData.enemyType)
+            {
+                case 1:
+                    enemyGo = Instantiate(enemyPrefab, enemyBattleStation);
+                    enemyUnit = enemyGo.GetComponent<Enemy>();
+                    break;
+                case 3:
+                    enemyGo = Instantiate(enemyPrefab1, enemyBattleStation);
+                    enemyUnit = enemyGo.GetComponent<Enemy>();
+                    break;
+                case 4:
+                    break;
+            }
+        }
+
+       
 
 
         dialogueText.text = "A " + enemyUnit.enemyName + " is attacking!";
