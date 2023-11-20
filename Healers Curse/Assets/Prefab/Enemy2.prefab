@@ -131,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Dad
   enemyUnitLevel: 5
-  maxHP: 20
-  currentHP: 20
+  maxHP: 100
+  currentHP: 50
   armor: 0
   damage: 10
   damageTaken: 0

@@ -78,7 +78,7 @@ public class BattleSystem : MonoBehaviour
                 break;
         }
 
-        if (seedVillage)
+        if (savedData.sceneIndex == 0)
         {
             enemyGo = Instantiate(enemyPrefab2, enemyBattleStation);
             enemyUnit = enemyGo.GetComponent<Enemy>();
