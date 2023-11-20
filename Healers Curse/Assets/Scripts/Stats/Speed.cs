@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Speed : MonoBehaviour
+public class Speed : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float currentSpeed;
     [SerializeField] private float prevSpeed;
@@ -28,5 +28,14 @@ public class Speed : MonoBehaviour
     {
         currentSpeed -= prevSpeed;
         this.speed.SetText(currentSpeed.ToString());
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.speed = (int)currentSpeed;
+    }
+    public void LoadData(GameData data) 
+    {
+        currentSpeed = data.speed;
     }
 }

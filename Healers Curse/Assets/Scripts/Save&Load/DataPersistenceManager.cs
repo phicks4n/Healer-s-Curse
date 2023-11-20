@@ -72,6 +72,7 @@ public class DataPersistenceManager : MonoBehaviour
     {
         this.gameData = new GameData();
         InventoryController.instance.StartNewInventory();
+        InventoryController.instance.StartNewEquipment();
     }
 
     public void LoadGame()

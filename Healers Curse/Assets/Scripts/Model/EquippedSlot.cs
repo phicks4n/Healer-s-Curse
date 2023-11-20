@@ -17,6 +17,11 @@ namespace Inventory.Model
         public Sprite itemSprite;
         [SerializeField]
         public ItemSO equipItem;
+
+        [SerializeField]
+        private Image baseImage;
+        [SerializeField]
+        public Sprite baseSprite;
 /*
         public void EquipGear(Sprite image)
         {
@@ -27,10 +32,17 @@ namespace Inventory.Model
 
         public void EquipGear(ItemSO item)
         {
-            equipItem = item;
-            this.itemSprite = item.ItemImage;
-            slotImage.sprite = this.itemSprite;
-            slotName.enabled = false;
+            if (item != null)
+            {
+                equipItem = item;
+                this.itemSprite = item.ItemImage;
+                slotImage.sprite = this.itemSprite;
+                slotName.enabled = false;
+            }
+            else
+            {
+                ResetSlot();
+            }
         }
 
         public void setSlot(EquippedSlot otherSlot)
@@ -39,6 +51,19 @@ namespace Inventory.Model
             itemSprite = otherSlot.itemSprite;
             slotImage.sprite = this.itemSprite;
             slotName.enabled = false;
+        }
+
+        public void UnequipGear()
+        {
+            equipItem = null;
+            ResetSlot();
+        }
+
+        private void ResetSlot()
+        {
+            this.itemSprite = baseSprite; // Assuming baseSprite is a default sprite
+            slotImage.sprite = this.itemSprite;
+            slotName.enabled = true;
         }
 
         public ItemSO GetEquippedGear()

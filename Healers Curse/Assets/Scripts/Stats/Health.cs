@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
@@ -60,5 +60,14 @@ public class Health : MonoBehaviour
     {
          Debug.Log("Died");
         currentHealth = 1;
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.health = (int)currentHealth;
+    }
+    public void LoadData(GameData data) 
+    {
+        currentHealth = data.health;
     }
 }

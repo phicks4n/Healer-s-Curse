@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CritChance : MonoBehaviour
+public class CritChance : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float currentCrit;
     [SerializeField] private float prevCrit;
@@ -28,5 +28,14 @@ public class CritChance : MonoBehaviour
     {
         currentCrit -= prevCrit;
         this.crit.SetText(currentCrit.ToString());
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.crit = (int)currentCrit;
+    }
+    public void LoadData(GameData data) 
+    {
+        currentCrit = data.crit;
     }
 }
