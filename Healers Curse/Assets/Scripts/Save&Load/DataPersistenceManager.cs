@@ -72,6 +72,7 @@ public class DataPersistenceManager : MonoBehaviour
     {
         this.gameData = new GameData();
         InventoryController.instance.StartNewInventory();
+        InventoryController.instance.StartNewEquipment();
     }
 
     public void LoadGame()
@@ -124,6 +125,24 @@ public class DataPersistenceManager : MonoBehaviour
         if (this.gameData != null)
         {
             dataHandler.SaveSceneIndex(this.gameData.sceneIndex);
+        }
+    }
+
+    // Save only the enemyType without modifying other data
+    public void SaveEnemyType()
+    {
+        if (this.gameData != null)
+        {
+            dataHandler.SaveEnemyType(this.gameData.enemyType);
+        }
+    }
+
+    // Save only the PlayerPosition without modifying other data
+    public void SavePlayerPosition()
+    {
+        if (this.gameData != null)
+        {
+            dataHandler.SavePlayerPosition(this.gameData.playerPosition);
         }
     }
 

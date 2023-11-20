@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class MagicResist : MonoBehaviour
+public class MagicResist : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float currentResist;
     [SerializeField] private float prevResist;
@@ -28,5 +28,14 @@ public class MagicResist : MonoBehaviour
     {
         currentResist -= prevResist;
         this.resist.SetText(currentResist.ToString());
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.resist = (int)currentResist;
+    }
+    public void LoadData(GameData data) 
+    {
+        currentResist = data.resist;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Mana : MonoBehaviour
+public class Mana : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float maxMana;
     [SerializeField] private float currentMana;
@@ -33,5 +33,14 @@ public class Mana : MonoBehaviour
             currentMana = maxMana;
             this.mana.SetText(currentMana.ToString() + "/" + maxMana);
         }
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.mana = (int)currentMana;
+    }
+    public void LoadData(GameData data) 
+    {
+        currentMana = data.mana;
     }
 }

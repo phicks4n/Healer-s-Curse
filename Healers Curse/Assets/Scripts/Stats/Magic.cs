@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Magic : MonoBehaviour
+public class Magic : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float currentMagic;
     [SerializeField] private float prevMagic;
@@ -28,5 +28,14 @@ public class Magic : MonoBehaviour
     {
         currentMagic -= prevMagic;
         this.magic.SetText(currentMagic.ToString());
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.magic = (int)currentMagic;
+    }
+    public void LoadData(GameData data) 
+    {
+        currentMagic = data.magic;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Attack : MonoBehaviour
+public class Attack : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float currentAttack;
     [SerializeField] private float prevAttack;
@@ -28,5 +28,14 @@ public class Attack : MonoBehaviour
     {
         currentAttack -= prevAttack;
         this.attack.SetText(currentAttack.ToString());
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.attack = (int)currentAttack;
+    }
+    public void LoadData(GameData data) 
+    {
+        currentAttack = data.attack;
     }
 }

@@ -104,6 +104,18 @@ namespace Inventory
             Debug.Log("I'm using the NEW data");
         }
 
+        public void StartNewEquipment()
+        {
+            headSlot.UnequipGear();
+            armorSlot.UnequipGear();
+            glovesSlot.UnequipGear();
+            bootsSlot.UnequipGear();
+            mainHandSlot.UnequipGear();
+            offHandSlot.UnequipGear();
+            ringSlot.UnequipGear();
+            necklaceSlot.UnequipGear();
+        }
+
         private void PrepareInventoryData()
         {
             inventoryData.Initialize();

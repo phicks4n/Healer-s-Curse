@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Armor : MonoBehaviour
+public class Armor : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float currentArmor;
     [SerializeField] private float prevArmor;
@@ -28,5 +28,14 @@ public class Armor : MonoBehaviour
     {
         currentArmor -= prevArmor;
         this.armor.SetText(currentArmor.ToString());
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.armor = (int)currentArmor;
+    }
+    public void LoadData(GameData data) 
+    {
+        currentArmor = data.armor;
     }
 }

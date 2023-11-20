@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DodgeChance : MonoBehaviour
+public class DodgeChance : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float currentDodge;
     [SerializeField] private float prevDodge;
@@ -28,5 +28,14 @@ public class DodgeChance : MonoBehaviour
     {
         currentDodge -= prevDodge;
         this.dodge.SetText(currentDodge.ToString());
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.dodge = (int)currentDodge;
+    }
+    public void LoadData(GameData data) 
+    {
+        currentDodge = data.dodge;
     }
 }

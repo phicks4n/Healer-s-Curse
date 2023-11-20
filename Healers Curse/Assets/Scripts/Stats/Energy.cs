@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Energy : MonoBehaviour
+public class Energy : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float maxEnergy;
     [SerializeField] private float currentEnergy;
@@ -32,5 +32,14 @@ public class Energy : MonoBehaviour
         currentEnergy += energy;
         maxEnergy += energy;
         this.energy.SetText(currentEnergy.ToString() + "/" + maxEnergy);
+    }
+
+    public void SaveData(GameData data) 
+    {
+        data.energy = (int)currentEnergy;
+    }
+    public void LoadData(GameData data) 
+    {
+        currentEnergy = data.energy;
     }
 }
