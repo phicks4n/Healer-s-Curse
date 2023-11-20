@@ -11,8 +11,15 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button newGameButton;
     [SerializeField] private Button continueGameButton;
 
+    public Animator animator;
+    public GameObject title;
+    public GameObject newButton;
+    public GameObject contButton;
+
     private void Start() 
     {
+
+
         if (!DataPersistenceManager.instance.HasGameData()) 
         {
             continueGameButton.interactable = false;
@@ -28,7 +35,11 @@ public class MainMenu : MonoBehaviour
         // OnSceneUnloaded() in the DataPersistenceManager
 
         //Load intro cutscene --
-        SceneManager.LoadSceneAsync(0);
+        newButton.SetActive(false);
+        contButton.SetActive(false);
+        title.SetActive(false);
+        StartCoroutine(playAnimation());
+
     }
 
     public void OnContinueGameClicked() 
@@ -57,7 +68,10 @@ public class MainMenu : MonoBehaviour
             // If the saved data is invalid, load the default scene
 
             //Load intro cutscene -- 
-            SceneManager.LoadSceneAsync(0);
+            newButton.SetActive(false);
+            contButton.SetActive(false);
+            title.SetActive(false);
+            StartCoroutine(playAnimation());
         }
     }
 
@@ -65,5 +79,16 @@ public class MainMenu : MonoBehaviour
     {
         newGameButton.interactable = false;
         continueGameButton.interactable = false;
+    }
+
+    IEnumerator playAnimation() 
+    {
+
+        animator.SetTrigger("Start");
+
+        yield return new WaitForSeconds(10);
+
+        SceneManager.LoadSceneAsync(0);
+
     }
 }
