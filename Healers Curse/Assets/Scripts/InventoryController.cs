@@ -104,13 +104,26 @@ namespace Inventory
             Debug.Log("I'm using the NEW data");
         }
 
-        public void StartNewEquipment()
+        public void StartNewEquipment(GameData data, int flag)
         {
+            if (flag == 0)
+            {
+                Debug.Log("In StartNewEquipment");
+                IItemAction itemAction = data.mainHandSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    Debug.Log("Reducing attack");
+                    itemAction.ReverseAction(gameObject, data.mainHandSlot.itemState);
+                }
+            }
             headSlot.UnequipGear();
             armorSlot.UnequipGear();
             glovesSlot.UnequipGear();
             bootsSlot.UnequipGear();
-            mainHandSlot.UnequipGear();
+            if (mainHandSlot != null)
+            {
+                mainHandSlot.UnequipGear();
+            }
             offHandSlot.UnequipGear();
             ringSlot.UnequipGear();
             necklaceSlot.UnequipGear();
@@ -431,6 +444,7 @@ namespace Inventory
         {
             //Equip the Items and make the necessary stat changes
             EquipOldItems(data);
+            Debug.Log("After Equipment Resets");
         }
 
 
@@ -456,7 +470,6 @@ namespace Inventory
             }
             if (data.glovesSlot.item != null)
             {
-                glovesSlot.EquipGear(data.glovesSlot.item);
                 IItemAction itemAction = data.glovesSlot.item as IItemAction;
                 if (itemAction != null)
                 {

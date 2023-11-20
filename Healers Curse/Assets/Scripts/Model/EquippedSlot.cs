@@ -30,7 +30,7 @@ namespace Inventory.Model
             slotName.enabled = false;
         }*/
 
-        public void EquipGear(ItemSO item)
+        public int EquipGear(ItemSO item)
         {
             if (item != null)
             {
@@ -43,6 +43,7 @@ namespace Inventory.Model
             {
                 ResetSlot();
             }
+            return 0;
         }
 
         public void setSlot(EquippedSlot otherSlot)

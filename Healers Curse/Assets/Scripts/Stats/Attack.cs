@@ -15,7 +15,7 @@ public class Attack : MonoBehaviour, IDataPersistence
         prevAttack = prevAttack;
         this.attack.SetText(currentAttack.ToString());
     }
-
+    
     public void AddAttack(int attack)
     {
         Reduce(prevAttack);

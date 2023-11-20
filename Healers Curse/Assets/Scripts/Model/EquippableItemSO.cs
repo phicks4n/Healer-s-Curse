@@ -29,5 +29,16 @@ namespace Inventory.Model
             }
             return true;
         }
+        public bool ReverseAction(GameObject character, List<ItemParameter> itemState = null)
+        {
+            foreach (ModifierData data in modifiersData)
+            {
+                Debug.Log("Erasing Stat");
+                Attack attack = character.GetComponent<Attack>();
+                attack.Reduce(data.value);
+                //data.statModifier.AffectCharacter(character, -data.value);
+            }
+            return true;
+        }
     }
 }

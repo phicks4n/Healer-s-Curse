@@ -21,6 +21,14 @@ namespace Inventory.Model
             }
             return true;
         }
+        public bool ReverseAction(GameObject character, List<ItemParameter> itemState = null)
+        {
+            foreach (ModifierData data in modifiersData)
+            {
+                data.statModifier.AffectCharacter(character, -data.value);
+            }
+            return true;
+        }
     }
 
     public interface IDestroyableItem
@@ -33,6 +41,7 @@ namespace Inventory.Model
         public string ActionName { get; }
         public AudioClip actionSFX { get; }
         bool PerformAction(GameObject character, List<ItemParameter> itemState);
+        bool ReverseAction(GameObject character, List<ItemParameter> itemState);
     }
 
     [Serializable]
