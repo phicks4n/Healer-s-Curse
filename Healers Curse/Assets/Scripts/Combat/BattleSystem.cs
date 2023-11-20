@@ -89,7 +89,6 @@ public class BattleSystem : MonoBehaviour
             
         }
 
-
         dialogueText.text = "A " + enemyUnit.enemyName + " is attacking!";
 
         playerHUD.SetHUD(playerUnit);

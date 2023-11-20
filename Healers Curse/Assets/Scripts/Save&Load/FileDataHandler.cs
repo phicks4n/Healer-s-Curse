@@ -116,8 +116,26 @@ public class FileDataHandler
             existingData = new GameData();
         }
 
-        // Update the sceneIndex
+        // Update the enemyType
         existingData.enemyType = enemyType;
+
+        // Save only the sceneIndex back to the file
+        Save(existingData);
+    }
+
+    public void SavePlayerPosition(Vector2 playerPosition)
+    {
+        // Load the existing GameData
+        GameData existingData = Load();
+
+        // If the existing data is null, create a new instance
+        if (existingData == null)
+        {
+            existingData = new GameData();
+        }
+
+        // Update the player's position
+        existingData.playerPosition = playerPosition;
 
         // Save only the sceneIndex back to the file
         Save(existingData);

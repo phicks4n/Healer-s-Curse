@@ -17,8 +17,10 @@ public class BattleStart : MonoBehaviour
             GameData savedData = DataPersistenceManager.instance.GetGameData();
 
             savedData.enemyType = enemyType;
+            savedData.playerPosition = player.gameObject.transform.position;
 
             DataPersistenceManager.instance.SaveEnemyType();
+            DataPersistenceManager.instance.SavePlayerPosition();
             GameManager.instance.NextLevel(player, sceneBuildIndex);
         }
     }
