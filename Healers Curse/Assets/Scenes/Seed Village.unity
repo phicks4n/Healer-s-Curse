@@ -135690,7 +135690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &2102709071
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -135738,7 +135738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4546cb12908171a4ea3ef1b851d59f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 42111b17132af7940b842931778b13f6, type: 2}
+  <InventoryItem>k__BackingField: {fileID: 11400000, guid: dc7db2d6e6ba4514eb81de9476eaa4c6, type: 2}
   <Quantity>k__BackingField: 1
   audioSource: {fileID: 0}
   duration: 0.3
