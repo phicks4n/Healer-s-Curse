@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -11,6 +12,14 @@ public class BattleSystem : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
+    public GameObject enemyPrefab1;
+    public GameObject enemyPrefab2;
+    public GameObject enempyPrefab3;
+
+    public GameObject deepRoots;
+    public GameObject seedVillage; 
+    public GameObject elvenVillage; 
+    public GameObject bossArena; 
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
@@ -29,17 +38,69 @@ public class BattleSystem : MonoBehaviour
 
     void Start()
     {
+        deepRoots = GameObject.Find("Deep Roots");
+        seedVillage = GameObject.Find("Seed Village Square");
+        elvenVillage = GameObject.Find("EV Forest");
+        bossArena = GameObject.Find("EV Boss");
+
+        deepRoots.SetActive(false);
+        seedVillage.SetActive(false);
+        elvenVillage.SetActive(false);
+        bossArena.SetActive(false);
+
         state = BattleState.START;
         StartCoroutine(SetupBattle());
     }
 
+    
+
     IEnumerator SetupBattle()
     {
+        GameData savedData = DataPersistenceManager.instance.GetGameData();
+        GameObject enemyGo;
+
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Character>();
 
-        GameObject enemyGo = Instantiate(enemyPrefab, enemyBattleStation);
-        enemyUnit = enemyGo.GetComponent<Enemy>();
+        
+        switch (savedData.sceneIndex)
+        {
+            case 0:
+                seedVillage.SetActive(true);
+                break;
+            case 2:
+                deepRoots.SetActive(true);
+                break;
+            case 5:
+                elvenVillage.SetActive(true);
+                break;
+            default:
+                break;
+        }
+
+        if (savedData.sceneIndex == 0)
+        {
+            enemyGo = Instantiate(enemyPrefab2, enemyBattleStation);
+            enemyUnit = enemyGo.GetComponent<Enemy>();
+        }
+        else
+        {
+            switch (savedData.enemyType)
+            {
+                case 1:
+                    enemyGo = Instantiate(enemyPrefab, enemyBattleStation);
+                    enemyUnit = enemyGo.GetComponent<Enemy>();
+                    break;
+                case 3:
+                    enemyGo = Instantiate(enemyPrefab1, enemyBattleStation);
+                    enemyUnit = enemyGo.GetComponent<Enemy>();
+                    break;
+                case 4:
+                    break;
+            }
+        }
+
+       
 
         dialogueText.text = "A " + enemyUnit.enemyName + " is attacking!";
 

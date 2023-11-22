@@ -49,6 +49,7 @@ MonoBehaviour:
   enemyUnitLevel: 1
   maxHP: 50
   currentHP: 50
+  armor: 0
   damage: 10
 --- !u!1 &6729247516027344167
 GameObject:

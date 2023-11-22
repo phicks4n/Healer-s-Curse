@@ -128,6 +128,24 @@ public class DataPersistenceManager : MonoBehaviour
         }
     }
 
+    // Save only the enemyType without modifying other data
+    public void SaveEnemyType()
+    {
+        if (this.gameData != null)
+        {
+            dataHandler.SaveEnemyType(this.gameData.enemyType);
+        }
+    }
+
+    // Save only the PlayerPosition without modifying other data
+    public void SavePlayerPosition()
+    {
+        if (this.gameData != null)
+        {
+            dataHandler.SavePlayerPosition(this.gameData.playerPosition);
+        }
+    }
+
     private void OnApplicationQuit() 
     {
         SaveGame();

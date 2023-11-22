@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour, IDataPersistence
 
     private Transform target;
 
+
     // Use this for initialization
     void Start()
     {
@@ -68,13 +69,14 @@ public class EnemyController : MonoBehaviour, IDataPersistence
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameData savedData = DataPersistenceManager.instance.GetGameData();
+        //GameData savedData = DataPersistenceManager.instance.GetGameData();
 
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             target = collision.transform;
-            savedData.playerPosition = collision.gameObject.transform.position;
-            Debug.Log("I am saving position at " + savedData.playerPosition + " Here is my actual position " + collision.gameObject.transform.position);
+            //savedData.playerPosition = collision.gameObject.transform.position;
+            //Debug.Log("I am saving position at " + savedData.playerPosition + " Here is my actual position " + collision.gameObject.transform.position);
+
         }
     }
 
@@ -98,7 +100,7 @@ public class EnemyController : MonoBehaviour, IDataPersistence
 
         if (distance <= 4f)
         {
-            data.playerPosition = gameObject.transform.position;
+            //data.playerPosition = gameObject.transform.position;
             Destroy(gameObject);
         }
     }
