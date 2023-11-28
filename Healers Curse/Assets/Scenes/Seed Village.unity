@@ -135813,7 +135813,7 @@ GameObject:
   - component: {fileID: 2102709072}
   - component: {fileID: 2102709071}
   m_Layer: 0
-  m_Name: Gloves
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135866,7 +135866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4546cb12908171a4ea3ef1b851d59f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InventoryItem>k__BackingField: {fileID: 11400000, guid: dc7db2d6e6ba4514eb81de9476eaa4c6, type: 2}
+  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 9d9b9b8cc4dcaee4fab4749be820ac96, type: 2}
   <Quantity>k__BackingField: 1
   audioSource: {fileID: 0}
   duration: 0.3

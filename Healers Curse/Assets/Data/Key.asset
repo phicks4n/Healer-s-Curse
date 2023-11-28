@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: Key
+  <Name>k__BackingField: Elven Key
   <Description>k__BackingField: A key to the boss in the elven village.
   <ItemImage>k__BackingField: {fileID: 21664348, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
   <DefaultParametersList>k__BackingField: []
