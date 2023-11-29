@@ -140,3 +140,4 @@ MonoBehaviour:
   armor: 5
   currentMana: 0
   maxMana: 0
+  damageTaken: 0

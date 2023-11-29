@@ -1108,7 +1108,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -123383,6 +123383,10 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 3572161163583341965}
+    - target: {fileID: 6436630077680721412, guid: cd651f652e173fa458e11c0b7b97fbac, type: 3}
+      propertyPath: sceneBuildIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6756626920598549729, guid: cd651f652e173fa458e11c0b7b97fbac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.52
@@ -135813,12 +135817,12 @@ GameObject:
   - component: {fileID: 2102709072}
   - component: {fileID: 2102709071}
   m_Layer: 0
-  m_Name: Gloves
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &2102709071
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -135866,7 +135870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4546cb12908171a4ea3ef1b851d59f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 42111b17132af7940b842931778b13f6, type: 2}
+  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 9d9b9b8cc4dcaee4fab4749be820ac96, type: 2}
   <Quantity>k__BackingField: 1
   audioSource: {fileID: 0}
   duration: 0.3
