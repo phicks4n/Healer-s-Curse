@@ -81,25 +81,25 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         Vector2 newPosition;
 
         //Seed Village
-        if(data.sceneIndex == 0)
+        if(data.sceneIndex == 1)
         {
             newPosition = new Vector2(-46.52f, 13.54f);
             SetPlayerPosition(newPosition);
         }
         //PC House
-        else if(data.sceneIndex == 1)
+        else if(data.sceneIndex == 2)
         {
             newPosition = new Vector2(7.01f, -4.22f);
             SetPlayerPosition(newPosition);
         }
         //Deep Roots
-        else if(data.sceneIndex == 2)
+        else if(data.sceneIndex == 3)
         {
             newPosition = new Vector2(29.46f, 11.51f);
             SetPlayerPosition(newPosition);
         }
         //Elven Village
-        else if(data.sceneIndex == 5)
+        else if(data.sceneIndex == 6)
         {
             newPosition = new Vector2(-.52f, -54.27f);
             SetPlayerPosition(newPosition);

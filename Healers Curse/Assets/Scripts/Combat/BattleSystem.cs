@@ -32,6 +32,9 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD playerHUD;
     public EnemyHUD enemyHUD;
 
+    public GameObject AttackAnimation;
+    public GameObject Death;
+
     bool Block = false;
 
     public BattleState state;
@@ -65,20 +68,20 @@ public class BattleSystem : MonoBehaviour
         
         switch (savedData.sceneIndex)
         {
-            case 0:
+            case 1:
                 seedVillage.SetActive(true);
                 break;
-            case 2:
+            case 3:
                 deepRoots.SetActive(true);
                 break;
-            case 5:
+            case 6:
                 elvenVillage.SetActive(true);
                 break;
             default:
                 break;
         }
 
-        if (savedData.sceneIndex == 0)
+        if (savedData.sceneIndex == 1)
         {
             enemyGo = Instantiate(enemyPrefab2, enemyBattleStation);
             enemyUnit = enemyGo.GetComponent<Enemy>();
@@ -138,6 +141,12 @@ public class BattleSystem : MonoBehaviour
             playerHUD.SetEP(playerUnit.currentEP);
 
             dialogueText.text = "Attack deals " + enemyUnit.damageTaken + " damage!";
+
+            AttackAnimation.SetActive(true);
+
+            yield return new WaitForSeconds(1);
+
+            AttackAnimation.SetActive(false);
 
             yield return new WaitForSeconds(2f);
 
@@ -219,10 +228,18 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "Victory!";
+            
+            if (savedData.sceneIndex == 1)
+            {
+                
+            }
+
+
             SceneManager.LoadSceneAsync(savedData.sceneIndex);
         }
         else if (state == BattleState.LOST)
         {
+            Death.SetActive(true);
             dialogueText.text = "You have died...";
             SceneManager.LoadSceneAsync(savedData.sceneIndex);
         }

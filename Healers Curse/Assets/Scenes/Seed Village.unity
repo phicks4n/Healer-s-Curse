@@ -1108,7 +1108,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -123383,6 +123383,10 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 3572161163583341965}
+    - target: {fileID: 6436630077680721412, guid: cd651f652e173fa458e11c0b7b97fbac, type: 3}
+      propertyPath: sceneBuildIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6756626920598549729, guid: cd651f652e173fa458e11c0b7b97fbac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.52
