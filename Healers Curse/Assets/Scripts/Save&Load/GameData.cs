@@ -15,6 +15,7 @@ public class GameData
     public List<InventoryItem> equipmentData;
     public InventoryItem headSlot, armorSlot, glovesSlot, bootsSlot, mainHandSlot, offHandSlot, ringSlot, necklaceSlot;
     public int armor, attack, crit, dodge, energy, health, resist, magic, mana, speed;
+    public int currentHealth;
 
     // the values defined in this constructor will be the default values
     // the game starts with when there's no data to load
@@ -44,5 +45,6 @@ public class GameData
         magic = 0;
         mana = 10;
         speed = 20;
+        currentHealth = 90;
     }
 }

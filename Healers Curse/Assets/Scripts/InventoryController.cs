@@ -530,9 +530,12 @@ namespace Inventory
             inventory = inventoryData.GetInventoryList();
             for(int i = 0; i < 10; i++)
             {
-                if(inventory[i].item.name == item.name)
+                if(inventory[i].item != null)
                 {
-                    return true;
+                    if(inventory[i].item.name == item.name)
+                    {
+                        return true;
+                    }
                 }
             }
 
@@ -549,7 +552,7 @@ namespace Inventory
                 if(inventory[i].item.name == item.name)
                 {
                     inventoryData.RemoveItem(i, inventory[i].quantity);
-                }
+                }  
             }
         }
     }
