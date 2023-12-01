@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
-public class BattleSystem : MonoBehaviour, IDataPersistence
+public class BattleSystem : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
@@ -64,8 +64,6 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
 
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Character>();
-
-        SetPlayerStats();
 
         
         switch (savedData.sceneIndex)
@@ -275,30 +273,6 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
         dialogueText.text = "You brace for an attack!";
         state = BattleState.WAIT;
         StartCoroutine(EnemyTurn());
-    }
-
-    public void SetPlayerStats()
-    {
-        GameData savedData = DataPersistenceManager.instance.GetGameData();
-
-
-        playerUnit.maxHP = (float)savedData.health;
-        playerUnit.currentHP = (float)savedData.currentHealth;
-        playerUnit.maxEP = savedData.energy;
-        playerUnit.currentEP = savedData.energy;
-        playerUnit.armor = savedData.armor;
-        playerUnit.damage = savedData.attack;
-    }
-
-
-    public void SaveData(GameData data) 
-    {
-        data.currentHealth = (int)playerUnit.currentHP;
-    }
-
-    public void LoadData(GameData data)
-    {
-
     }
 
 }
