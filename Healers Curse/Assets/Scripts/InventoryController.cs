@@ -430,7 +430,88 @@ namespace Inventory
             data.equipmentData = equipmentData.GetInventoryList();
 
             //Save the current equipment
-            data.headSlot.item = headSlot.GetEquippedGear();
+            data.headSlot.item = headSlot.GetEquippedGear();/*
+            if (data.headSlot.item != null)
+            {
+                IItemAction itemAction = data.headSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.headSlot.itemState);
+                }
+            }*/
+            data.armorSlot.item = armorSlot.GetEquippedGear();/*
+            if (data.armorSlot.item != null)
+            {
+                IItemAction itemAction = data.armorSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.armorSlot.itemState);
+                }
+            }*/
+            data.glovesSlot.item = glovesSlot.GetEquippedGear();/*
+            if (data.glovesSlot.item != null)
+            {
+                IItemAction itemAction = data.glovesSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.glovesSlot.itemState);
+                }
+            }*/
+            data.bootsSlot.item = bootsSlot.GetEquippedGear();/*
+            if (data.bootsSlot.item != null)
+            {
+                IItemAction itemAction = data.bootsSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.bootsSlot.itemState);
+                }
+            }*/
+            data.mainHandSlot.item = mainHandSlot.GetEquippedGear();/*
+            if (data.mainHandSlot.item != null)
+            {
+                IItemAction itemAction = data.mainHandSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.mainHandSlot.itemState);
+                }
+            }*/
+            data.offHandSlot.item = offHandSlot.GetEquippedGear();/*
+            if (data.offHandSlot.item != null)
+            {
+                IItemAction itemAction = data.offHandSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.offHandSlot.itemState);
+                }
+            }*/
+            data.ringSlot.item = ringSlot.GetEquippedGear();/*
+            if (data.ringSlot.item != null)
+            {
+                IItemAction itemAction = data.ringSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.ringSlot.itemState);
+                }
+            }*/
+            data.necklaceSlot.item = necklaceSlot.GetEquippedGear();/*
+            if (data.necklaceSlot.item != null)
+            {
+                IItemAction itemAction = data.necklaceSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.necklaceSlot.itemState);
+                }
+            }*/
+        }
+
+        public void LoadData(GameData data)
+        {
+            //Equip the Items and make the necessary stat changes
+            Debug.Log("After Equipment Resets");
+        }
+
+        public void RevertOldItems(GameData data)
+        {
             if (data.headSlot.item != null)
             {
                 IItemAction itemAction = data.headSlot.item as IItemAction;
@@ -439,7 +520,6 @@ namespace Inventory
                     itemAction.ReverseAction(gameObject, data.headSlot.itemState);
                 }
             }
-            data.armorSlot.item = armorSlot.GetEquippedGear();
             if (data.armorSlot.item != null)
             {
                 IItemAction itemAction = data.armorSlot.item as IItemAction;
@@ -448,7 +528,6 @@ namespace Inventory
                     itemAction.ReverseAction(gameObject, data.armorSlot.itemState);
                 }
             }
-            data.glovesSlot.item = glovesSlot.GetEquippedGear();
             if (data.glovesSlot.item != null)
             {
                 IItemAction itemAction = data.glovesSlot.item as IItemAction;
@@ -457,7 +536,6 @@ namespace Inventory
                     itemAction.ReverseAction(gameObject, data.glovesSlot.itemState);
                 }
             }
-            data.bootsSlot.item = bootsSlot.GetEquippedGear();
             if (data.bootsSlot.item != null)
             {
                 IItemAction itemAction = data.bootsSlot.item as IItemAction;
@@ -466,7 +544,6 @@ namespace Inventory
                     itemAction.ReverseAction(gameObject, data.bootsSlot.itemState);
                 }
             }
-            data.mainHandSlot.item = mainHandSlot.GetEquippedGear();
             if (data.mainHandSlot.item != null)
             {
                 IItemAction itemAction = data.mainHandSlot.item as IItemAction;
@@ -475,7 +552,6 @@ namespace Inventory
                     itemAction.ReverseAction(gameObject, data.mainHandSlot.itemState);
                 }
             }
-            data.offHandSlot.item = offHandSlot.GetEquippedGear();
             if (data.offHandSlot.item != null)
             {
                 IItemAction itemAction = data.offHandSlot.item as IItemAction;
@@ -484,7 +560,6 @@ namespace Inventory
                     itemAction.ReverseAction(gameObject, data.offHandSlot.itemState);
                 }
             }
-            data.ringSlot.item = ringSlot.GetEquippedGear();
             if (data.ringSlot.item != null)
             {
                 IItemAction itemAction = data.ringSlot.item as IItemAction;
@@ -493,7 +568,6 @@ namespace Inventory
                     itemAction.ReverseAction(gameObject, data.ringSlot.itemState);
                 }
             }
-            data.necklaceSlot.item = necklaceSlot.GetEquippedGear();
             if (data.necklaceSlot.item != null)
             {
                 IItemAction itemAction = data.necklaceSlot.item as IItemAction;
@@ -502,12 +576,6 @@ namespace Inventory
                     itemAction.ReverseAction(gameObject, data.necklaceSlot.itemState);
                 }
             }
-        }
-
-        public void LoadData(GameData data)
-        {
-            //Equip the Items and make the necessary stat changes
-            Debug.Log("After Equipment Resets");
         }
 
         public void EquipOldItems(GameData data)
