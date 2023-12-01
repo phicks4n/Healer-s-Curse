@@ -14,4 +14,13 @@ public class CharacterStatMagicModifierSO : CharacterStatModifierSO
             magic.AddMagic((int)val);
         }
     }
+
+    public override void ReduceCharacter(GameObject character, float val)
+    {
+        Magic magic = character.GetComponent<Magic>();
+        if (magic != null)
+        {
+            magic.Reduce((int)val);
+        }
+    }
 }

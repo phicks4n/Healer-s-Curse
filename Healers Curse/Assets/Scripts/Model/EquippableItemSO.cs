@@ -16,13 +16,6 @@ namespace Inventory.Model
 
         public bool PerformAction(GameObject character, List<ItemParameter> itemState = null)
         {
-            /*
-            AgentWeapon weaponSystem = character.GetComponent<AgentWeapon>();
-            if (weaponSystem != null)
-            {
-                weaponSystem.SetWeapon(this, itemState == null ? DefaultParametersList : itemState);
-                return true;
-            }*/
             foreach (ModifierData data in modifiersData)
             {
                 data.statModifier.AffectCharacter(character, data.value);
@@ -34,9 +27,9 @@ namespace Inventory.Model
             foreach (ModifierData data in modifiersData)
             {
                 Debug.Log("Erasing Stat");
-                Attack attack = character.GetComponent<Attack>();
-                attack.Reduce(data.value);
-                //data.statModifier.AffectCharacter(character, -data.value);
+                //Attack attack = character.GetComponent<Attack>();
+                //attack.Reduce(data.value);
+                data.statModifier.ReduceCharacter(character, data.value);
             }
             return true;
         }

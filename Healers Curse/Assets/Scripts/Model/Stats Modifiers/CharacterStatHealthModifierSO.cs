@@ -13,4 +13,13 @@ public class CharacterStatHealthModifierSO : CharacterStatModifierSO
             health.AddHealth((int)val);
         }
     }
+
+    public override void ReduceCharacter(GameObject character, float val)
+    {
+        Health health = character.GetComponent<Health>();
+        if (health != null)
+        {
+            health.Reduce((int)val);
+        }
+    }
 }

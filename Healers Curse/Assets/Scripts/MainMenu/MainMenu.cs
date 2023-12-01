@@ -54,6 +54,7 @@ public class MainMenu : MonoBehaviour
 
         // Retrieve gameData
         GameData savedData = DataPersistenceManager.instance.GetGameData();
+        InventoryController.instance.EquipOldItems(savedData);
 
         // Check if sceneIndex is valid before loading
         if (savedData != null && savedData.sceneIndex >= 0 && savedData.sceneIndex < SceneManager.sceneCountInBuildSettings)

@@ -14,4 +14,13 @@ public class CharacterStatEnergyModifierSO : CharacterStatModifierSO
             energy.AddEnergy((int)val);
         }
     }
+
+    public override void ReduceCharacter(GameObject character, float val)
+    {
+        Energy energy = character.GetComponent<Energy>();
+        if (energy != null)
+        {
+            energy.Reduce((int)val);
+        }
+    }
 }
