@@ -14,4 +14,13 @@ public class CharacterStatCritChanceModifierSO : CharacterStatModifierSO
             crit.AddCrit((int)val);
         }
     }
+
+    public override void ReduceCharacter(GameObject character, float val)
+    {
+        CritChance crit = character.GetComponent<CritChance>();
+        if (crit != null)
+        {
+            crit.Reduce((int)val);
+        }
+    }
 }

@@ -11,8 +11,8 @@ public class CritChance : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        currentCrit = currentCrit;
-        prevCrit = prevCrit;
+        currentCrit = 2;
+        prevCrit = 0;
         this.crit.SetText(currentCrit.ToString() + "%");
     }
 

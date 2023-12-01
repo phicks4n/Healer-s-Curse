@@ -431,24 +431,86 @@ namespace Inventory
 
             //Save the current equipment
             data.headSlot.item = headSlot.GetEquippedGear();
+            if (data.headSlot.item != null)
+            {
+                IItemAction itemAction = data.headSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.headSlot.itemState);
+                }
+            }
             data.armorSlot.item = armorSlot.GetEquippedGear();
+            if (data.armorSlot.item != null)
+            {
+                IItemAction itemAction = data.armorSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.armorSlot.itemState);
+                }
+            }
             data.glovesSlot.item = glovesSlot.GetEquippedGear();
+            if (data.glovesSlot.item != null)
+            {
+                IItemAction itemAction = data.glovesSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.glovesSlot.itemState);
+                }
+            }
             data.bootsSlot.item = bootsSlot.GetEquippedGear();
+            if (data.bootsSlot.item != null)
+            {
+                IItemAction itemAction = data.bootsSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.bootsSlot.itemState);
+                }
+            }
             data.mainHandSlot.item = mainHandSlot.GetEquippedGear();
+            if (data.mainHandSlot.item != null)
+            {
+                IItemAction itemAction = data.mainHandSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.mainHandSlot.itemState);
+                }
+            }
             data.offHandSlot.item = offHandSlot.GetEquippedGear();
+            if (data.offHandSlot.item != null)
+            {
+                IItemAction itemAction = data.offHandSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.offHandSlot.itemState);
+                }
+            }
             data.ringSlot.item = ringSlot.GetEquippedGear();
+            if (data.ringSlot.item != null)
+            {
+                IItemAction itemAction = data.ringSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.ringSlot.itemState);
+                }
+            }
             data.necklaceSlot.item = necklaceSlot.GetEquippedGear();
+            if (data.necklaceSlot.item != null)
+            {
+                IItemAction itemAction = data.necklaceSlot.item as IItemAction;
+                if (itemAction != null)
+                {
+                    itemAction.ReverseAction(gameObject, data.necklaceSlot.itemState);
+                }
+            }
         }
 
         public void LoadData(GameData data)
         {
             //Equip the Items and make the necessary stat changes
-            EquipOldItems(data);
             Debug.Log("After Equipment Resets");
         }
 
-
-        private void EquipOldItems(GameData data)
+        public void EquipOldItems(GameData data)
         {
             if (data.headSlot.item != null)
             {
@@ -470,6 +532,7 @@ namespace Inventory
             }
             if (data.glovesSlot.item != null)
             {
+                glovesSlot.EquipGear(data.glovesSlot.item);
                 IItemAction itemAction = data.glovesSlot.item as IItemAction;
                 if (itemAction != null)
                 {
@@ -530,9 +593,12 @@ namespace Inventory
             inventory = inventoryData.GetInventoryList();
             for(int i = 0; i < 10; i++)
             {
-                if(inventory[i].item.name == item.name)
+                if(inventory[i].item != null)
                 {
-                    return true;
+                    if(inventory[i].item.name == item.name)
+                    {
+                        return true;
+                    }
                 }
             }
 
@@ -549,7 +615,7 @@ namespace Inventory
                 if(inventory[i].item.name == item.name)
                 {
                     inventoryData.RemoveItem(i, inventory[i].quantity);
-                }
+                }  
             }
         }
     }

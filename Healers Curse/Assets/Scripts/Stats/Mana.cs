@@ -11,8 +11,8 @@ public class Mana : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        maxMana = maxMana;
-        currentMana = currentMana;
+        maxMana = 10;
+        currentMana = 10;
         this.mana.SetText(currentMana.ToString() + "/" + maxMana);
     }
 

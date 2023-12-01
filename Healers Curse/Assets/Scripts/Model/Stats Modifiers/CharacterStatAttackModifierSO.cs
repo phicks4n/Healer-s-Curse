@@ -13,4 +13,13 @@ public class CharacterStatAttackModifierSO : CharacterStatModifierSO
             attack.AddAttack((int)val);
         }
     }
+
+    public override void ReduceCharacter(GameObject character, float val)
+    {
+        Attack attack = character.GetComponent<Attack>();
+        if (attack != null)
+        {
+            attack.Reduce((int)val);
+        }
+    }
 }

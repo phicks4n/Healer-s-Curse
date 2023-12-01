@@ -14,4 +14,13 @@ public class CharacterStatManaModifierSO : CharacterStatModifierSO
             mana.AddMana((int)val);
         }
     }
+
+    public override void ReduceCharacter(GameObject character, float val)
+    {
+        Mana mana = character.GetComponent<Mana>();
+        if (mana != null)
+        {
+            mana.Reduce((int)val);
+        }
+    }
 }
