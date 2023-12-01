@@ -30,13 +30,13 @@ public class Character : MonoBehaviour
         {
             if (((currentHealth / maxHealth) * 100) >= .5 * maxHealth)
             {
-                currentHP = currentHP - (dmg - (int)(0.55 * armor));
-                damageTaken = (dmg - (int)(0.55 * armor));
+                currentHP = currentHP - (dmg - (int)(0.65 * armor));
+                damageTaken = (dmg - (int)(0.65 * armor));
             }
             else if ((((currentHealth / maxHealth) * 100) < .5 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .25 * maxHealth))
             {
-                currentHP = currentHP - (dmg - (int)(0.35 * armor));
-                damageTaken = (dmg - (int)(0.35 * armor));
+                currentHP = currentHP - (dmg - (int)(0.45 * armor));
+                damageTaken = (dmg - (int)(0.45 * armor));
 
             }
             else if ((((currentHealth / maxHealth) * 100) < .25 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .1 * maxHealth))
@@ -47,7 +47,7 @@ public class Character : MonoBehaviour
             else if (((currentHealth / maxHealth) * 100) < .1 * maxHealth)
             {
                 currentHP = (currentHP - (int) (dmg * 1.125));
-                damageTaken = dmg;
+                damageTaken = (int) (dmg * 1.125);
             }
         }
 
