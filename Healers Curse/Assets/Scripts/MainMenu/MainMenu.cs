@@ -88,7 +88,19 @@ public class MainMenu : MonoBehaviour
 
         animator.SetTrigger("Start");
 
-        yield return new WaitForSeconds(1);
+        float startTime = Time.time;
+        float waitTime = 12; // Adjust this to the desired wait time
+
+        while (Time.time < startTime + waitTime)
+        {
+            // Check for spacebar input to skip the wait
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                break; // Exit the loop if the spacebar is pressed
+            }
+
+            yield return null; // Yield to the next frame
+        }
 
         SceneManager.LoadSceneAsync(1);
 

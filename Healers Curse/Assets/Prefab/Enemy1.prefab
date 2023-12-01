@@ -47,10 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Drake Bull
   enemyUnitLevel: 2
-  maxHP: 80
-  currentHP: 80
-  armor: 5
-  damage: 15
+  maxHP: 150
+  currentHP: 150
+  armor: 25
+  damage: 75
+  damageTaken: 0
 --- !u!1 &8186921735581743187
 GameObject:
   m_ObjectHideFlags: 0

@@ -132,7 +132,7 @@ MonoBehaviour:
   enemyName: Dad
   enemyUnitLevel: 5
   maxHP: 100
-  currentHP: 50
+  currentHP: 75
   armor: 0
-  damage: 10
+  damage: 60
   damageTaken: 0
