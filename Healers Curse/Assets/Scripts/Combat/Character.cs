@@ -30,19 +30,42 @@ public class Character : MonoBehaviour
         {
             if (((currentHealth / maxHealth) * 100) >= .5 * maxHealth)
             {
-                currentHP = currentHP - (dmg - (int)(0.65 * armor));
-                damageTaken = (dmg - (int)(0.65 * armor));
+                if (dmg < (int) (.65 * armor)) 
+                {
+                    currentHP = currentHP - 1;
+                    damageTaken = 1;
+                }
+                else
+                {
+                    currentHP = currentHP - (dmg - (int)(0.65 * armor));
+                    damageTaken = (dmg - (int)(0.65 * armor));
+                }
             }
             else if ((((currentHealth / maxHealth) * 100) < .5 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .25 * maxHealth))
             {
-                currentHP = currentHP - (dmg - (int)(0.45 * armor));
-                damageTaken = (dmg - (int)(0.45 * armor));
-
+                if (dmg < (int) (.45 * armor))
+                {   
+                    currentHP = currentHP - 1;
+                    damageTaken = 1;
+                }
+                else
+                {
+                    currentHP = currentHP - (dmg - (int)(0.45 * armor));
+                    damageTaken = (dmg - (int)(0.45 * armor));
+                }
             }
             else if ((((currentHealth / maxHealth) * 100) < .25 * maxHealth) && (((currentHealth / maxHealth) * 100) >= .1 * maxHealth))
             {
-                currentHP = currentHP - (dmg - (int)(0.25 * armor));
-                damageTaken = (dmg - (int)(0.25 * armor));
+                if (dmg < (int) (.25 * armor))
+                {
+                    currentHP = currentHP - 1;
+                    damageTaken = 1;
+                }
+                else
+                {
+                    currentHP = currentHP - (dmg - (int)(0.25 * armor));
+                    damageTaken = (dmg - (int)(0.25 * armor));
+                }
             }
             else if (((currentHealth / maxHealth) * 100) < .1 * maxHealth)
             {
