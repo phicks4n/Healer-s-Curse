@@ -39,33 +39,4 @@ public class BattleHUD : MonoBehaviour
         epCounter.text = epSlider.value.ToString();
     }
 
-
-    /*public void SetHUDCharacter(Character character)
-    {
-        characterName.text = character.unitName;
-        levelText.text = "Lvl " + character.unitLevel;
-        hpSlider.maxValue = character.maxHP;
-        hpSlider.value = character.currentHP;
-        manaSlider.maxValue = character.maxMana;
-        manaSlider.value = character.currentMana;
-    }
-
-    public void SetHUDEnemy(Enemy enemy)
-    {
-        enemyName.text = enemy.enemyName;
-        enemyLevelText.text = "Lvl " + enemy.enemyUnitLevel;
-        enemyHPSlider.maxValue = enemy.maxHP;
-        enemyHPSlider.value = enemy.currentHP;
-    }
-
-    public void SetHPCharacter (int characterHP)
-    {
-        hpSlider.value = characterHP;
-    }
-
-    public void SetHPEnemy(int enemyHP)
-    {
-        enemyHPSlider.value = enemyHP;
-    }*/
-
 }
