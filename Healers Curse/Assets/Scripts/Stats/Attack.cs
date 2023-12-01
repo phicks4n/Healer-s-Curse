@@ -11,16 +11,21 @@ public class Attack : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        currentAttack = currentAttack;
-        prevAttack = prevAttack;
+        //currentAttack = currentAttack;
+        //prevAttack = prevAttack;
+        currentAttack = 15;
+        prevAttack = 0;
         this.attack.SetText(currentAttack.ToString());
     }
     
     public void AddAttack(int attack)
     {
+        Debug.Log(attack);
+        Debug.Log(currentAttack);
         Reduce(prevAttack);
         prevAttack = attack;
         currentAttack += attack;
+        DataPersistenceManager.instance.SavePlayerStat(2, (int)currentAttack);
         this.attack.SetText(currentAttack.ToString());
     }
 
@@ -33,9 +38,11 @@ public class Attack : MonoBehaviour, IDataPersistence
     public void SaveData(GameData data) 
     {
         data.attack = (int)currentAttack;
+        Debug.Log("Save: " + data.attack);
     }
     public void LoadData(GameData data) 
     {
         currentAttack = data.attack;
+        Debug.Log("Load: " + data.attack);
     }
 }

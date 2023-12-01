@@ -14,4 +14,13 @@ public class CharacterStatSpeedModifierSO : CharacterStatModifierSO
             speed.AddSpeed((int)val);
         }
     }
+
+    public override void ReduceCharacter(GameObject character, float val)
+    {
+        Speed speed = character.GetComponent<Speed>();
+        if (speed != null)
+        {
+            speed.Reduce((int)val);
+        }
+    }
 }

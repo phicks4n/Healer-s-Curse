@@ -11,8 +11,8 @@ public class DodgeChance : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        currentDodge = currentDodge;
-        prevDodge = prevDodge;
+        currentDodge = 3;
+        prevDodge = 0;
         this.dodge.SetText(currentDodge.ToString() + "%");
     }
 

@@ -11,8 +11,8 @@ public class Magic : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        currentMagic = currentMagic;
-        prevMagic = prevMagic;
+        currentMagic = 0;
+        prevMagic = 0;
         this.magic.SetText(currentMagic.ToString());
     }
 

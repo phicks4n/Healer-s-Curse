@@ -14,4 +14,13 @@ public class CharacterStatArmorModifierSO : CharacterStatModifierSO
             armor.AddArmor((int)val);
         }
     }
+
+    public override void ReduceCharacter(GameObject character, float val)
+    {
+        Armor armor = character.GetComponent<Armor>();
+        if (armor != null)
+        {
+            armor.Reduce((int)val);
+        }
+    }
 }

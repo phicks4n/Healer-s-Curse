@@ -11,8 +11,8 @@ public class Speed : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        currentSpeed = currentSpeed;
-        prevSpeed = prevSpeed;
+        currentSpeed = 20;
+        prevSpeed = 0;
         this.speed.SetText(currentSpeed.ToString());
     }
 
