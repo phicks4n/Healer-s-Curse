@@ -37,11 +37,9 @@ public class Attack : MonoBehaviour, IDataPersistence
     public void SaveData(GameData data) 
     {
         data.attack = (int)currentAttack;
-        Debug.Log("Save: " + data.attack);
     }
     public void LoadData(GameData data) 
     {
         currentAttack = data.attack;
-        Debug.Log("Load: " + data.attack);
     }
 }
