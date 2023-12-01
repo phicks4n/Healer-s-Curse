@@ -11,8 +11,8 @@ public class Armor : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        currentArmor = currentArmor;
-        prevArmor = prevArmor;
+        currentArmor = 20;
+        prevArmor = 0;
         this.armor.SetText(currentArmor.ToString());
     }
 

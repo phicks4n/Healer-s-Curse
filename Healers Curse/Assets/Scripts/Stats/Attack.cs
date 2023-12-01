@@ -11,13 +11,17 @@ public class Attack : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        currentAttack = currentAttack;
-        prevAttack = prevAttack;
+        //currentAttack = currentAttack;
+        //prevAttack = prevAttack;
+        currentAttack = 15;
+        prevAttack = 0;
         this.attack.SetText(currentAttack.ToString());
     }
     
     public void AddAttack(int attack)
     {
+        Debug.Log(attack);
+        Debug.Log(currentAttack);
         Reduce(prevAttack);
         prevAttack = attack;
         currentAttack += attack;

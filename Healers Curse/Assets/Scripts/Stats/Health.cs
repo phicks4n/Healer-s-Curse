@@ -14,8 +14,8 @@ public class Health : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        maxHealth = maxHealth;
-        currentHealth = currentHealth;
+        maxHealth = 90;
+        currentHealth = 90;
         this.health.SetText(currentHealth.ToString() + "/" + maxHealth);
     }
 
@@ -41,6 +41,11 @@ public class Health : MonoBehaviour, IDataPersistence
             currentHealth = maxHealth;
             this.health.SetText(currentHealth.ToString() + "/" + maxHealth);
         }
+    }
+
+    public void updateText()
+    {
+        this.health.SetText(currentHealth.ToString() + "/" + maxHealth);
     }
 
     private void CreateHitFeedback()

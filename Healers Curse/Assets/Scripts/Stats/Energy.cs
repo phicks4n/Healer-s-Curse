@@ -12,9 +12,9 @@ public class Energy : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        maxEnergy = maxEnergy;
-        currentEnergy = currentEnergy;
-        prevEnergy = prevEnergy;
+        maxEnergy = 50;
+        currentEnergy = 50;
+        prevEnergy = 0;
         this.energy.SetText(currentEnergy.ToString() + "/" + maxEnergy);
     }
 

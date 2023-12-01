@@ -11,8 +11,8 @@ public class MagicResist : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
-        currentResist = currentResist;
-        prevResist = prevResist;
+        currentResist = 0;
+        prevResist = 0;
         this.resist.SetText(currentResist.ToString());
     }
 

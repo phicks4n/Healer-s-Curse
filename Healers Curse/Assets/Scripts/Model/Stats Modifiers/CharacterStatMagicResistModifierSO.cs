@@ -14,4 +14,13 @@ public class CharacterStatMagicResistModifierSO : CharacterStatModifierSO
             resist.AddResist((int)val);
         }
     }
+
+    public override void ReduceCharacter(GameObject character, float val)
+    {
+        MagicResist resist = character.GetComponent<MagicResist>();
+        if (resist != null)
+        {
+            resist.Reduce((int)val);
+        }
+    }
 }
