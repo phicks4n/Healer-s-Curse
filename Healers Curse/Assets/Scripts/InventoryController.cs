@@ -522,5 +522,35 @@ namespace Inventory
                 }
             }
         }
+
+        //Searches through the inventory returning True or False if the item is found
+        public Boolean SearchInventory(ItemSO item)
+        {
+            List<InventoryItem> inventory = new List<InventoryItem>();
+            inventory = inventoryData.GetInventoryList();
+            for(int i = 0; i < 10; i++)
+            {
+                if(inventory[i].item.name == item.name)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        //Searches through the inventory returning removing the item if found
+        public void RemoveItem(ItemSO item)
+        {
+            List<InventoryItem> inventory = new List<InventoryItem>();
+            inventory = inventoryData.GetInventoryList();
+            for(int i = 0; i < 10; i++)
+            {
+                if(inventory[i].item.name == item.name)
+                {
+                    inventoryData.RemoveItem(i, inventory[i].quantity);
+                }
+            }
+        }
     }
 }

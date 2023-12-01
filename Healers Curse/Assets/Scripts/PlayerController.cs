@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
         Debug.Log("I am continuing");
 
-        if (data.playerPosition == Vector2.zero || savedData.sceneIndex != savedData.initialSceneIndex || savedData.sceneIndex == 1)
+        if (data.playerPosition == Vector2.zero || savedData.sceneIndex != savedData.initialSceneIndex || savedData.sceneIndex == 2)
         {
             //Use SceneDefault
             SetSceneDefault(data);
