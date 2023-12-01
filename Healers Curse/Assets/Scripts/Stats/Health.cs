@@ -34,11 +34,13 @@ public class Health : MonoBehaviour, IDataPersistence
         if (currentHealth + healing < maxHealth)
         {
             currentHealth += healing;
+            DataPersistenceManager.instance.SavePlayerStat(6, (int)currentHealth);
             this.health.SetText(currentHealth.ToString() + "/" + maxHealth);
         }
         else
         {
             currentHealth = maxHealth;
+            DataPersistenceManager.instance.SavePlayerStat(6, (int)currentHealth);
             this.health.SetText(currentHealth.ToString() + "/" + maxHealth);
         }
     }

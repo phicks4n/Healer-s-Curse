@@ -151,11 +151,11 @@ public class DataPersistenceManager : MonoBehaviour
     {
         if (this.gameData != null)
         {
-           
+
             dataHandler.SavePlayerStat(playerStat, stat);  
         }
     }
-
+    
     private void OnApplicationQuit() 
     {
         SaveGame();

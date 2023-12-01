@@ -21,6 +21,7 @@ public class Magic : MonoBehaviour, IDataPersistence
         Reduce(prevMagic);
         prevMagic = magic;
         currentMagic += magic;
+        DataPersistenceManager.instance.SavePlayerStat(8, (int)currentMagic);
         this.magic.SetText(currentMagic.ToString());
     }
 

@@ -31,6 +31,7 @@ public class Energy : MonoBehaviour, IDataPersistence
         prevEnergy = energy;
         currentEnergy += energy;
         maxEnergy += energy;
+        DataPersistenceManager.instance.SavePlayerStat(5, (int)currentEnergy);
         this.energy.SetText(currentEnergy.ToString() + "/" + maxEnergy);
     }
 

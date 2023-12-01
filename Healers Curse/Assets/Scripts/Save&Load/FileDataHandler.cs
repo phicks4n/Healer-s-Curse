@@ -141,7 +141,7 @@ public class FileDataHandler
         Save(existingData);
     }
 
-    public void SavePlayerStat(int playerStat, int stat)
+public void SavePlayerStat(int playerStat, int stat)
     {
         // Load the existing GameData
         GameData existingData = Load();
