@@ -146,6 +146,16 @@ public class DataPersistenceManager : MonoBehaviour
         }
     }
 
+    // Save only the specific Player's stat without modifying other data
+    public void SavePlayerStat(int playerStat, int stat)
+    {
+        if (this.gameData != null)
+        {
+
+            dataHandler.SavePlayerStat(playerStat, stat);  
+        }
+    }
+    
     private void OnApplicationQuit() 
     {
         SaveGame();

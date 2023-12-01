@@ -21,6 +21,7 @@ public class Speed : MonoBehaviour, IDataPersistence
         Reduce(prevSpeed);
         prevSpeed = speed;
         currentSpeed += speed;
+        DataPersistenceManager.instance.SavePlayerStat(10, (int)currentSpeed);
         this.speed.SetText(currentSpeed.ToString());
     }
 

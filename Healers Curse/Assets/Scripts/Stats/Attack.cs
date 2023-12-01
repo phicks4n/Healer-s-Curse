@@ -25,6 +25,7 @@ public class Attack : MonoBehaviour, IDataPersistence
         Reduce(prevAttack);
         prevAttack = attack;
         currentAttack += attack;
+        DataPersistenceManager.instance.SavePlayerStat(2, (int)currentAttack);
         this.attack.SetText(currentAttack.ToString());
     }
 

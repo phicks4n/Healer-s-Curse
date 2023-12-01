@@ -141,6 +141,62 @@ public class FileDataHandler
         Save(existingData);
     }
 
+public void SavePlayerStat(int playerStat, int stat)
+    {
+        // Load the existing GameData
+        GameData existingData = Load();
+
+        // If the existing data is null, create a new instance
+        if (existingData == null)
+        {
+            existingData = new GameData();
+        }
+
+        if(playerStat == 1)
+        {
+            existingData.armor = stat;
+        }
+        else if(playerStat == 2)
+        {
+            existingData.attack = stat; 
+        }
+        else if(playerStat == 3)
+        {
+            existingData.crit = stat;  
+        }
+        else if(playerStat == 4)
+        {
+            existingData.dodge = stat;  
+        }
+        else if(playerStat == 5)
+        {
+            existingData.energy = stat; 
+        }
+        else if(playerStat == 6)
+        {
+            existingData.health = stat; 
+        }
+        else if(playerStat == 7)
+        {
+            existingData.resist = stat; 
+        }
+        else if(playerStat == 8)
+        {
+            existingData.magic = stat; 
+        }
+        else if(playerStat == 9)
+        {
+            existingData.mana = stat;
+        }
+        else if(playerStat == 10)
+        {
+            existingData.speed = stat; 
+        }
+
+        // Save only the sceneIndex back to the file
+        Save(existingData);
+    }
+
     // the below is a simple implementation of XOR encryption
     private string EncryptDecrypt(string data) 
     {

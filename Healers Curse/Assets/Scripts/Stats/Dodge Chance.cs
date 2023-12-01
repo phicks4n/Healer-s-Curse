@@ -21,6 +21,7 @@ public class DodgeChance : MonoBehaviour, IDataPersistence
         Reduce(prevDodge);
         prevDodge = dodge;
         currentDodge += dodge;
+        DataPersistenceManager.instance.SavePlayerStat(4, (int)currentDodge);
         this.dodge.SetText(currentDodge.ToString() + "%");
     }
 

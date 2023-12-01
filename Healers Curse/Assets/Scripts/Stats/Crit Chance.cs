@@ -21,6 +21,7 @@ public class CritChance : MonoBehaviour, IDataPersistence
         Reduce(prevCrit);
         prevCrit = crit;
         currentCrit += crit;
+        DataPersistenceManager.instance.SavePlayerStat(3, (int)currentCrit);
         this.crit.SetText(currentCrit.ToString() + "%");
     }
 
