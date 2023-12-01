@@ -10,11 +10,14 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
 public class BattleSystem : MonoBehaviour
 {
+    [Header("INK JSON")]
+    [SerializeField] private TextAsset inkJSON;
+
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
     public GameObject enemyPrefab1;
     public GameObject enemyPrefab2;
-    public GameObject enempyPrefab3;
+    public GameObject enemyPrefab3;
 
     public GameObject deepRoots;
     public GameObject seedVillage; 
@@ -26,11 +29,13 @@ public class BattleSystem : MonoBehaviour
 
     Character playerUnit;
     Enemy enemyUnit;
+    //DialogueManager dialogue;
 
     public TextMeshProUGUI dialogueText;
 
     public BattleHUD playerHUD;
     public EnemyHUD enemyHUD;
+    public GameObject skillMenu;
 
     public GameObject AttackAnimation;
     public GameObject Death;
@@ -50,6 +55,7 @@ public class BattleSystem : MonoBehaviour
         seedVillage.SetActive(false);
         elvenVillage.SetActive(false);
         bossArena.SetActive(false);
+        skillMenu.SetActive(false);
 
         state = BattleState.START;
         StartCoroutine(SetupBattle());
@@ -153,7 +159,7 @@ public class BattleSystem : MonoBehaviour
             if (isDead)
             {
                 state = BattleState.WON;
-                EndBattle();
+                StartCoroutine(EndBattle());
             }
             else
             {
@@ -211,7 +217,7 @@ public class BattleSystem : MonoBehaviour
         if (isDead)
         {
             state = BattleState.LOST;
-            EndBattle();
+            StartCoroutine(EndBattle());
 
         }
         else
@@ -221,7 +227,7 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    void EndBattle()
+    IEnumerator EndBattle()
     {
         GameData savedData = DataPersistenceManager.instance.GetGameData();
 
@@ -231,11 +237,11 @@ public class BattleSystem : MonoBehaviour
             
             if (savedData.sceneIndex == 1)
             {
-                
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                yield return StartCoroutine(EndDialogue());
+                SceneManager.LoadSceneAsync(savedData.sceneIndex);
             }
-
-
-            SceneManager.LoadSceneAsync(savedData.sceneIndex);
+            
         }
         else if (state == BattleState.LOST)
         {
@@ -275,4 +281,31 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(EnemyTurn());
     }
 
+    public void OnSkillButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+        skillMenu.SetActive(true);
+    }
+
+    public void onCancel()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+        skillMenu.SetActive(false);
+    }
+
+    IEnumerator EndDialogue()
+    {
+        DialogueManager dialogue = DialogueManager.GetInstance();
+
+        while (dialogue.dialogueIsPlaying)
+        {
+            yield return null;
+        }
+    }
 }
