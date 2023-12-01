@@ -47,10 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Root Form
   enemyUnitLevel: 1
-  maxHP: 50
-  currentHP: 50
-  armor: 0
-  damage: 10
+  maxHP: 80
+  currentHP: 80
+  armor: 10
+  damage: 50
+  damageTaken: 0
 --- !u!1 &6729247516027344167
 GameObject:
   m_ObjectHideFlags: 0
