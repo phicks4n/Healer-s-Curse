@@ -26,11 +26,13 @@ public class Mana : MonoBehaviour, IDataPersistence
         if (currentMana + mana < maxMana)
         {
             currentMana += mana;
+            DataPersistenceManager.instance.SavePlayerStat(9, (int)currentMana);
             this.mana.SetText(currentMana.ToString() + "/" + maxMana);
         }
         else
         {
             currentMana = maxMana;
+            DataPersistenceManager.instance.SavePlayerStat(9, (int)currentMana);
             this.mana.SetText(currentMana.ToString() + "/" + maxMana);
         }
     }

@@ -21,6 +21,7 @@ public class Armor : MonoBehaviour, IDataPersistence
         Reduce(prevArmor);
         prevArmor = armor;
         currentArmor += armor;
+        DataPersistenceManager.instance.SavePlayerStat(1, (int)currentArmor);
         this.armor.SetText(currentArmor.ToString());
     }
 

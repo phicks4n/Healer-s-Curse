@@ -21,6 +21,7 @@ public class MagicResist : MonoBehaviour, IDataPersistence
         Reduce(prevResist);
         prevResist = resist;
         currentResist += resist;
+        DataPersistenceManager.instance.SavePlayerStat(7, (int)currentResist);
         this.resist.SetText(currentResist.ToString());
     }
 
