@@ -141,7 +141,25 @@ public class FileDataHandler
         Save(existingData);
     }
 
-public void SavePlayerStat(int playerStat, int stat)
+    public void SaveNumOfBattles(int numOfBattles)
+    {
+        // Load the existing GameData
+        GameData existingData = Load();
+
+        // If the existing data is null, create a new instance
+        if (existingData == null)
+        {
+            existingData = new GameData();
+        }
+
+        // Update the player's position
+        existingData.numOfBattles = numOfBattles;
+
+        // Save only the sceneIndex back to the file
+        Save(existingData);
+    }
+
+    public void SavePlayerStat(int playerStat, int stat)
     {
         // Load the existing GameData
         GameData existingData = Load();
