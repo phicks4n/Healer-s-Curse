@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -151,7 +151,7 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
     IEnumerator PlayerAttack()
     {
 
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage, enemyUnit.armor, playerUnit.currentHP, playerUnit.maxHP);
+        bool isDead = enemyUnit.TakeDamage((int)(1.2* playerUnit.damage), enemyUnit.armor, playerUnit.currentHP, playerUnit.maxHP);
 
         int hasEnergy = playerUnit.currentEP;
 
