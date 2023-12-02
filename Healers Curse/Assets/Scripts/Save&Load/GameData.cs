@@ -17,7 +17,8 @@ public class GameData
     public int armor, attack, crit, dodge, energy, health, resist, magic, mana, speed;
     public int currentHealth;
     public int playerClass;
-    public int lvl, exp, numOfBattles;
+    public int lvl, exp;
+    public int numOfBattles;
 
     // the values defined in this constructor will be the default values
     // the game starts with when there's no data to load
@@ -50,7 +51,7 @@ public class GameData
         currentHealth = 90;
         playerClass = 0;
         lvl = 1;
-        //exp = 0;
+        exp = 0;
         numOfBattles = 0;
     }
 }
