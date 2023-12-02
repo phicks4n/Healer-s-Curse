@@ -137,6 +137,9 @@ MonoBehaviour:
   currentEP: 50
   damage: 50
   costOfAttack: 10
+  costOfBash: 15
+  costOfSpook: 20
+  costOfBlock: 10
   armor: 5
   currentMana: 0
   maxMana: 0

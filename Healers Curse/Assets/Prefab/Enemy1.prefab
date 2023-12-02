@@ -49,7 +49,7 @@ MonoBehaviour:
   enemyUnitLevel: 2
   maxHP: 110
   currentHP: 110
-  armor: 20
+  armor: 25
   damage: 50
   damageTaken: 0
 --- !u!1 &8186921735581743187

@@ -1,1 +1,3 @@
-﻿
+Dad's notes continue...
+"The Elven Village is up ahead"
+"Get ready, Oak"

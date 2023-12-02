@@ -28,6 +28,7 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
+    public Animator animator;
 
     Character playerUnit;
     Enemy enemyUnit;
@@ -203,10 +204,10 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
 
                 Block = true;
 
-                if (hasEnergy >= playerUnit.costOfAttack)
+                if (hasEnergy >= playerUnit.costOfBash)
                 {
 
-                    playerUnit.Energy(playerUnit.costOfAttack);
+                    playerUnit.Energy(playerUnit.costOfBash);
 
                     enemyHUD.SetHP(enemyUnit.currentHP);
                     playerHUD.SetEP(playerUnit.currentEP);
@@ -225,11 +226,13 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
                     {
                         state = BattleState.WON;
                         StartCoroutine(EndBattle());
+                        break;
                     }
                     else
                     {
                         state = BattleState.ENEMYTURN;
                         StartCoroutine(EnemyTurn());
+                        break;
                     }
                 }
                 else
@@ -237,19 +240,47 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
                     dialogueText.text = "Your energy is too low!";
                     state = BattleState.PLAYERTURN;
                     StartCoroutine(PlayerTurn());
+                    break;
                 }
-                break;
+                
             case 2:
-                scared = 2;
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(EnemyTurn());
-
-                break;
+                hasEnergy = playerUnit.currentEP;
+                if(hasEnergy >= playerUnit.costOfSpook)
+                {
+                    playerUnit.Energy(playerUnit.costOfSpook);
+                    playerHUD.SetEP(playerUnit.currentEP);
+                    scared = 2;
+                    state = BattleState.ENEMYTURN;
+                    StartCoroutine(EnemyTurn());
+                    break;
+                }
+                else
+                {
+                    dialogueText.text = "Your energy is too low!";
+                    state = BattleState.PLAYERTURN;
+                    StartCoroutine(PlayerTurn());
+                    break;
+                }
+                
             case 3:
                 superBlock = true;
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(EnemyTurn());
-                break;
+                hasEnergy = playerUnit.currentEP;
+                if (hasEnergy >= playerUnit.costOfBlock)
+                {
+                    playerUnit.Energy(playerUnit.costOfBlock);
+                    playerHUD.SetEP(playerUnit.currentEP);
+                    state = BattleState.ENEMYTURN;
+                    StartCoroutine(EnemyTurn());
+                    break;
+                }
+                else
+                {
+                    dialogueText.text = "Your energy is too low!";
+                    state = BattleState.PLAYERTURN;
+                    StartCoroutine(PlayerTurn());
+                    break;
+                }
+                
         }
 
         yield return new WaitForSeconds(1);
@@ -257,7 +288,7 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
 
     IEnumerator PlayerRecover()
     {
-        playerUnit.Recover(10);
+        playerUnit.Recover(20);
 
         playerHUD.SetEP(playerUnit.currentEP);
         dialogueText.text = "You recovered some energy!";
@@ -297,6 +328,10 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
                 if (Block)
                 {
                     damageDone = enemyUnit.damage - playerUnit.armor;
+                    if (damageDone < 0) 
+                    {
+                        damageDone = 1;
+                    }
                 }
                 else if (superBlock)
                 {
@@ -350,6 +385,11 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
                 yield return StartCoroutine(EndDialogue());
                 SceneManager.LoadSceneAsync(savedData.sceneIndex);
             }
+            else if(savedData.sceneIndex == 6 && savedData.enemyType == 4)
+            {
+                dialogueText.text = "Raging Minatour Defeated";
+                StartCoroutine(GameEnds());
+            }
             else
             {
                 yield return new WaitForSeconds(2f);
@@ -390,6 +430,10 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
             return;
 
         Block = true;
+        playerUnit.Recover(10);
+
+        playerHUD.SetEP(playerUnit.currentEP);
+
         dialogueText.text = "You brace for an attack!";
         state = BattleState.WAIT;
         StartCoroutine(EnemyTurn());
@@ -467,6 +511,15 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
         playerUnit.currentEP = savedData.energy;
         playerUnit.armor = savedData.armor;
         playerUnit.damage = savedData.attack;
+    }
+
+    IEnumerator GameEnds()
+    {
+        yield return new WaitForSeconds(3f);
+
+        dialogueText.text = "YOU WIN!!";
+        SceneManager.LoadSceneAsync(0);
+
     }
 
 

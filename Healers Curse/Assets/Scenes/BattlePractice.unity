@@ -6900,7 +6900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6236269087317838124, guid: 752ce9e7701440245a4decb0479302ac, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 338.46
+      value: 514.4297
       objectReference: {fileID: 0}
     - target: {fileID: 6236269087317838124, guid: 752ce9e7701440245a4decb0479302ac, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6936,7 +6936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6236269087317838124, guid: 752ce9e7701440245a4decb0479302ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00018311
+      value: -18.739986
       objectReference: {fileID: 0}
     - target: {fileID: 6236269087317838124, guid: 752ce9e7701440245a4decb0479302ac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8737,6 +8737,7 @@ MonoBehaviour:
   bossArena: {fileID: 144260192}
   playerBattleStation: {fileID: 904678546}
   enemyBattleStation: {fileID: 1146978318}
+  animator: {fileID: 0}
   dialogueText: {fileID: 1956714090}
   playerHUD: {fileID: 1536699076}
   enemyHUD: {fileID: 104709582}

@@ -48,8 +48,8 @@ MonoBehaviour:
   enemyName: Raging Minotaur
   enemyUnitLevel: 10
   maxHP: 200
-  currentHP: 200
-  armor: 30
+  currentHP: 160
+  armor: 25
   damage: 50
   damageTaken: 0
 --- !u!1 &5421899294353347335
