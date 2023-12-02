@@ -155,6 +155,16 @@ public class DataPersistenceManager : MonoBehaviour
             dataHandler.SavePlayerStat(playerStat, stat);  
         }
     }
+
+    // Save only the num of battles without modifying other data
+    public void SaveNumOfBattles(int numOfBattles)
+    {
+        if (this.gameData != null)
+        {
+
+            dataHandler.SaveNumOfBattles(numOfBattles);  
+        }
+    }
     
     private void OnApplicationQuit() 
     {

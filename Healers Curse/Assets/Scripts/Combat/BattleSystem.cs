@@ -237,6 +237,8 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
         {
             dialogueText.text = "Victory!";
             
+            DataPersistenceManager.instance.SaveNumOfBattles(savedData.numOfBattles + 1);
+
             if (savedData.sceneIndex == 1)
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
