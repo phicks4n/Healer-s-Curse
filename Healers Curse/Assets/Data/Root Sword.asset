@@ -16,11 +16,11 @@ MonoBehaviour:
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Root Sword
   <Description>k__BackingField: Made of the monsters that live in the Deep Roots.
-    Grants 30 attack.
+    Grants 20 attack.
   <ItemImage>k__BackingField: {fileID: -1157913205, guid: 25483bba547f5f04ab74d7c2dbd9258b, type: 3}
   <DefaultParametersList>k__BackingField: []
   <itemType>k__BackingField: Main Hand
   modifiersData:
   - statModifier: {fileID: 11400000, guid: b69f68f85ee7bf247a678214a7902130, type: 2}
-    value: 30
+    value: 20
   <actionSFX>k__BackingField: {fileID: 0}
