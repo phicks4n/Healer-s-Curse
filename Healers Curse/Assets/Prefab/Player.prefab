@@ -131,16 +131,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Oak
   unitLevel: 1
-  maxHP: 90
-  currentHP: 90
+  maxHP: 100
+  currentHP: 100
   maxEP: 50
   currentEP: 50
   damage: 50
   costOfAttack: 10
-  costOfBash: 15
-  costOfSpook: 20
+  costOfBash: 10
+  costOfSpook: 10
   costOfBlock: 10
-  armor: 5
+  armor: 15
   currentMana: 0
   maxMana: 0
   damageTaken: 0
