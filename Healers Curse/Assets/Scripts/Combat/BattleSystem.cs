@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -41,6 +42,11 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
     public GameObject Death;
 
     bool Block = false;
+    bool superBlock = false;
+    int skillUse = 0;
+    int scared = 0;
+    int dodge = 0;
+    int numOfBattles = 0;
 
     public BattleState state;
 
@@ -177,6 +183,69 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
         }  
     }
 
+    IEnumerator SkillAttack()
+    {
+        switch (skillUse)
+        {
+            case 1:
+                bool isDead = enemyUnit.TakeDamage(playerUnit.damage, enemyUnit.armor, playerUnit.currentHP, playerUnit.maxHP);
+
+                int hasEnergy = playerUnit.currentEP;
+
+                Block = true;
+
+                if (hasEnergy >= playerUnit.costOfAttack)
+                {
+
+                    playerUnit.Energy(playerUnit.costOfAttack);
+
+                    enemyHUD.SetHP(enemyUnit.currentHP);
+                    playerHUD.SetEP(playerUnit.currentEP);
+
+                    dialogueText.text = "Attack deals " + enemyUnit.damageTaken + " damage!";
+
+                    AttackAnimation.SetActive(true);
+
+                    yield return new WaitForSeconds(1);
+
+                    AttackAnimation.SetActive(false);
+
+                    yield return new WaitForSeconds(2f);
+
+                    if (isDead)
+                    {
+                        state = BattleState.WON;
+                        StartCoroutine(EndBattle());
+                    }
+                    else
+                    {
+                        state = BattleState.ENEMYTURN;
+                        StartCoroutine(EnemyTurn());
+                    }
+                }
+                else
+                {
+                    dialogueText.text = "Your energy is too low!";
+                    state = BattleState.PLAYERTURN;
+                    StartCoroutine(PlayerTurn());
+                }
+                break;
+            case 2:
+                scared = 2;
+                state = BattleState.ENEMYTURN;
+                StartCoroutine(EnemyTurn());
+
+                break;
+            case 3:
+                superBlock = true;
+                state = BattleState.ENEMYTURN;
+                StartCoroutine(EnemyTurn());
+                break;
+        }
+
+        yield return new WaitForSeconds(1);
+    }
+
     IEnumerator PlayerRecover()
     {
         playerUnit.Recover(10);
@@ -198,35 +267,62 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
         yield return new WaitForSeconds(1f);
 
         float damageDone;
-
-        if (!Block)
+        if(scared > 0)
         {
-            damageDone = enemyUnit.damage;
-        }
-        else
-            damageDone = enemyUnit.damage - playerUnit.armor;
-
-        bool isDead = playerUnit.TakeDamage(damageDone, playerUnit.armor, enemyUnit.currentHP, enemyUnit.maxHP, Block);
-
-        playerHUD.SetHP(playerUnit.currentHP);
-
-        dialogueText.text = enemyUnit.enemyName + " deals " + playerUnit.damageTaken + " damage!";
-
-        Block = false;
-
-        yield return new WaitForSeconds(1f);
-
-        if (isDead)
-        {
-            state = BattleState.LOST;
-            StartCoroutine(EndBattle());
-
-        }
-        else
-        {
+            dialogueText.text = enemyUnit.enemyName + " is too scared to attack!";
+            scared--;
             state = BattleState.PLAYERTURN;
             StartCoroutine(PlayerTurn());
         }
+        else
+        {
+            if(dodge > 0)
+            {
+                dialogueText.text = "You avoid an incoming attack";
+                dodge--;
+                state = BattleState.PLAYERTURN;
+                StartCoroutine(PlayerTurn());
+            }
+            else
+            {
+                if (Block)
+                {
+                    damageDone = enemyUnit.damage - playerUnit.armor;
+                }
+                else if (superBlock)
+                {
+                    damageDone = 0;
+                }
+                else
+                {
+                    damageDone = enemyUnit.damage;
+                }
+
+                bool isDead = playerUnit.TakeDamage(damageDone, playerUnit.armor, enemyUnit.currentHP, enemyUnit.maxHP, Block);
+
+                playerHUD.SetHP(playerUnit.currentHP);
+
+                dialogueText.text = enemyUnit.enemyName + " deals " + playerUnit.damageTaken + " damage!";
+
+                Block = false;
+                superBlock = false;
+
+                yield return new WaitForSeconds(1f);
+
+                if (isDead)
+                {
+                    state = BattleState.LOST;
+                    StartCoroutine(EndBattle());
+
+                }
+                else
+                {
+                    state = BattleState.PLAYERTURN;
+                    StartCoroutine(PlayerTurn());
+                }
+            }
+            
+        } 
     }
 
     IEnumerator EndBattle()
@@ -241,6 +337,11 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
                 yield return StartCoroutine(EndDialogue());
+                SceneManager.LoadSceneAsync(savedData.sceneIndex);
+            }
+            else
+            {
+                yield return new WaitForSeconds(2f);
                 SceneManager.LoadSceneAsync(savedData.sceneIndex);
             }
             
@@ -290,6 +391,40 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
             return;
         }
         skillMenu.SetActive(true);
+    }
+
+    public void OnSkill1()
+    {
+
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+        skillMenu.SetActive(false);
+        skillUse = 1;
+        StartCoroutine(SkillAttack());
+    }
+    public void OnSkill2()
+    {
+
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+        skillMenu.SetActive(false);
+        skillUse = 2;
+        StartCoroutine(SkillAttack());
+    }
+    public void OnSkill3()
+    {
+
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+        skillMenu.SetActive(false);
+        skillUse = 3;
+        StartCoroutine(SkillAttack());
     }
 
     public void onCancel()

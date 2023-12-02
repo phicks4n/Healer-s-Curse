@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skill1
+  m_text: Shield Bash
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3069,9 +3069,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Skill3
-
-'
+  m_text: Superior Block
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3098,8 +3096,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 19
+  m_fontSizeBase: 19
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14485,6 +14483,9 @@ MonoBehaviour:
   levelText: {fileID: 494381861}
   hpCounter: {fileID: 2002178424}
   epCounter: {fileID: 814429545}
+  skill1: {fileID: 0}
+  skill2: {fileID: 0}
+  skill3: {fileID: 0}
   hpSlider: {fileID: 661049757}
   epSlider: {fileID: 1546994898}
 --- !u!1 &1546994897
@@ -15039,7 +15040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skill2
+  m_text: Intimidate
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -68081,7 +68082,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2076312948}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1471713881}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnSkill1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2076312948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68472,6 +68485,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2355250782929496082, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355250782929496082, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2419108182647052154, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -68580,6 +68601,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2986986920108730482, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3102838862904994422, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -68723,6 +68748,10 @@ PrefabInstance:
     - target: {fileID: 4698063228084781168, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008238344534372293, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074398302510234063, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
       propertyPath: m_Name
@@ -68832,6 +68861,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5445559775449891014, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030518
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445559775449891014, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 75.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5593820067702352786, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -69016,6 +69053,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7572466753395813744, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7607176233267748970, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -69072,6 +69113,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8495908594317180156, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: levelWindow
+      value: 
+      objectReference: {fileID: 2083229091}
     - target: {fileID: 8526131759638410079, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -69229,6 +69274,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+--- !u!1 &2083229091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5008238344534372293, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+  m_PrefabInstance: {fileID: 2083229090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096667931
 GameObject:
   m_ObjectHideFlags: 0
@@ -69311,7 +69361,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2096667934}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1471713881}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnSkill2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2096667934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69432,7 +69494,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2116091863}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1471713881}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnSkill3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2116091863
 MonoBehaviour:
   m_ObjectHideFlags: 0
