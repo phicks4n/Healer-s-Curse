@@ -1,1 +1,2 @@
-﻿
+Your Dad's notes continue...
+"Head up through the cave exit"
