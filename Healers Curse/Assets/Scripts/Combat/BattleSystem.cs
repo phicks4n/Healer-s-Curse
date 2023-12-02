@@ -19,6 +19,7 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
     public GameObject enemyPrefab1;
     public GameObject enemyPrefab2;
     public GameObject enemyPrefab3;
+    public GameObject bossPrefab;
 
     public GameObject deepRoots;
     public GameObject seedVillage; 
@@ -95,6 +96,12 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
                 break;
         }
 
+        if(savedData.sceneIndex == 6 && savedData.enemyType == 4)
+        {
+            elvenVillage.SetActive(false);
+            bossArena.SetActive(true);
+        }
+
         if (savedData.sceneIndex == 1)
         {
             enemyGo = Instantiate(enemyPrefab2, enemyBattleStation);
@@ -113,6 +120,8 @@ public class BattleSystem : MonoBehaviour, IDataPersistence
                     enemyUnit = enemyGo.GetComponent<Enemy>();
                     break;
                 case 4:
+                    enemyGo = Instantiate(bossPrefab, enemyBattleStation);
+                    enemyUnit = enemyGo.GetComponent<Enemy>();
                     break;
             }
         }
