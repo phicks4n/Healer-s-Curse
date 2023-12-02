@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0172fb5d9aea741c4abbc026fe0ff880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Player
+  unitName: Oak
   unitLevel: 1
   maxHP: 90
   currentHP: 90

@@ -1,6 +1,8 @@
+using Inventory.Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -10,7 +12,10 @@ public class GameManager : MonoBehaviour
     public Animator battleTransition;
     public float transitionTime;
     public float battleTransitionTime;
-    
+
+    public GameObject levelWindow;
+    public KeyCode toggleKey = KeyCode.K;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -22,8 +27,32 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this);
-        } 
+        }
+
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(toggleKey))
+        {
+            ToggleWindow();
+        }
+        
+    }
+
+    public void ToggleWindow()
+    {
+        if(levelWindow != null)
+        {
+            levelWindow.SetActive(!levelWindow.activeSelf);
+        }
+        else
+        {
+            Debug.LogWarning("Test");
+        }
+    }
+
+
 
     public void NextLevel(Collider2D player, int sceneBuildIndex)
     {

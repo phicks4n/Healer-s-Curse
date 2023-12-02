@@ -10,6 +10,9 @@ public class BattleHUD : MonoBehaviour
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI hpCounter;
     public TextMeshProUGUI epCounter;
+    public TextMeshProUGUI skill1;
+    public TextMeshProUGUI skill2;
+    public TextMeshProUGUI skill3;
     public Slider hpSlider;
     public Slider epSlider;
     //public Slider manaSlider;
@@ -24,7 +27,6 @@ public class BattleHUD : MonoBehaviour
         epSlider.value = unit.currentEP;
         hpCounter.text = hpSlider.value.ToString();
         epCounter.text = epSlider.value.ToString();
-
     }
 
     public void SetHP(float hp)

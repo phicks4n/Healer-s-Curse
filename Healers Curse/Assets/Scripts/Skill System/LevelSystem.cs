@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSystem 
+public class LevelSystem //: IDataPersistence
 {
 
     public event EventHandler OnExpChange;
@@ -15,8 +15,9 @@ public class LevelSystem
 
     public LevelSystem() 
     {
-        level = 0;
-        exp = 0;
+        //GameData savedData = DataPersistenceManager.instance.GetGameData();
+        level = 1;//savedData.lvl;
+        exp = 0;//savedData.exp;
     }
 
     //Method that adds experience to the bar
@@ -68,5 +69,24 @@ public class LevelSystem
     {
         return level == expPerLevel.Length;
     }
+
+    public void SetExpBar(int level)
+    {
+
+
+    }
+
+
+    /*public void SaveData(GameData data)
+    {
+        data.lvl = level;
+        data.exp = exp;
+    }
+
+    public void LoadData(GameData data)
+    {
+        level = data.lvl;
+        exp = data.exp;
+    }*/
 
 }
