@@ -89,7 +89,7 @@ public class MainMenu : MonoBehaviour
         animator.SetTrigger("Start");
 
         float startTime = Time.time;
-        float waitTime = 12; // Adjust this to the desired wait time
+        float waitTime = 25; // Adjust this to the desired wait time
 
         while (Time.time < startTime + waitTime)
         {

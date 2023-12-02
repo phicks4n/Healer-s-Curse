@@ -8737,6 +8737,7 @@ MonoBehaviour:
   bossArena: {fileID: 144260192}
   playerBattleStation: {fileID: 904678546}
   enemyBattleStation: {fileID: 1146978318}
+  animator: {fileID: 0}
   dialogueText: {fileID: 1956714090}
   playerHUD: {fileID: 1536699076}
   enemyHUD: {fileID: 104709582}

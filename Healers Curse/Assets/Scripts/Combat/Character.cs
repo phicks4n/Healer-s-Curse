@@ -13,6 +13,9 @@ public class Character : MonoBehaviour
     public int currentEP;
     public float damage;
     public int costOfAttack;
+    public int costOfBash;
+    public int costOfSpook;
+    public int costOfBlock;
     public int armor;
     public int currentMana;
     public int maxMana;

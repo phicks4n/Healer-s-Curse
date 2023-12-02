@@ -619,6 +619,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2419108182647052154, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419108182647052154, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419108182647052154, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419108182647052154, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2530868817129826283, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -792,6 +808,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3971475452670682374, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383602767144282514, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383602767144282514, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383602767144282514, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383602767144282514, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -1028,6 +1060,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6359430553846003597, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064965282988297788, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064965282988297788, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064965282988297788, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064965282988297788, guid: ff0acee613987a14da2364e1a4f9407c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -1814,7 +1862,7 @@ MonoBehaviour:
     The very army that destroyed Healing Magic from the land. \n\n Your dad, the
     Captain of the town guard, has been training you since a young age to fight against
     this army. Today is your final day of training.\n\nThe army of monsters approaches,
-    and your dad awaits for you at the training arena..."
+    and your dad awaits for you at the training arena...\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a966b4f13a787f49b40b9717bf385a8, type: 2}
   m_sharedMaterial: {fileID: -7492236307150550702, guid: 7a966b4f13a787f49b40b9717bf385a8, type: 2}
@@ -3649,7 +3697,7 @@ MonoBehaviour:
     The very army that destroyed Healing Magic from the land. \n\n Your dad, the
     Captain of the town guard, has been training you since a young age to fight against
     this army. Today is your final day of training.\n\nThe army of monsters approaches,
-    and your dad awaits for you at the training arena..."
+    and your dad awaits for you at the training arena...\nPress Space To Continue"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a966b4f13a787f49b40b9717bf385a8, type: 2}
   m_sharedMaterial: {fileID: -7492236307150550702, guid: 7a966b4f13a787f49b40b9717bf385a8, type: 2}

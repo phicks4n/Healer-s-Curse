@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                currentHP = currentHP - (dmg - (int)(.35 * armor));
+                currentHP = currentHP - (dmg - (int)(.15 * armor));
                 damageTaken = (dmg - (int)(.15 * armor));
             }
         }
